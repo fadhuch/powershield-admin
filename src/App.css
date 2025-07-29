@@ -1,0 +1,403 @@
+/* React App Specific Styles */
+
+/* Override default React styles */
+.App {
+  text-align: left;
+}
+
+/* Theme color override - Dark Red */
+:root {
+  --primary-color: #873034;
+  --primary-hover: #A03840;
+  --primary-light: rgba(135, 48, 52, 0.9);
+}
+
+/* Header styles */
+header {
+  background-color: #873034 !important;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(135, 48, 52, 0.95) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Ensure hero section is visible */
+#section-hero-2 {
+  min-height: 100vh;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Project Filter Styles */
+.project-filter {
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #ccc;
+  color: #666;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #873034;
+  border-color: #873034;
+  color: #fff;
+}
+
+/* Project Card Styles */
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(135, 48, 52, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay-content {
+  text-align: center;
+}
+
+.project-link {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  color: #873034;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: #873034;
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-category {
+  margin-bottom: 10px;
+}
+
+.project-info h4 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.project-info h4 a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-info h4 a:hover {
+  color: #873034;
+  text-decoration: none;
+}
+
+.project-meta {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.meta-item {
+  margin-bottom: 5px;
+}
+
+.meta-item i {
+  width: 16px;
+  margin-right: 8px;
+  color: #873034;
+}
+
+/* Contact Form Styles */
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form .form-control {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #873034;
+  outline: none;
+  box-shadow: 0 0 5px rgba(135, 48, 52, 0.3);
+}
+
+.contact-info .contact-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.contact-info .icon {
+  width: 50px;
+  height: 50px;
+  background: #873034;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.contact-info .text h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-info .text p {
+  margin: 0;
+  color: #666;
+}
+
+/* Step Box Styles */
+.step-box {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  background: #873034;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+/* Badge Styles */
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-primary {
+  background: #873034;
+  color: #fff;
+}
+
+.badge-success {
+  background: #27ae60;
+  color: #fff;
+}
+
+.badge-warning {
+  background: #873034;
+  color: #fff;
+}
+
+.badge-info {
+  background: #3498db;
+  color: #fff;
+}
+
+.badge-secondary {
+  background: #95a5a6;
+  color: #fff;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Map Container */
+.map-container {
+  height: 400px;
+  width: 100%;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Preloader styles */
+.jpreLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header scroll effects */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Menu toggle styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    margin-bottom: 20px;
+  }
+  
+  .project-image img {
+    height: 200px;
+  }
+  
+  .project-info {
+    padding: 15px;
+  }
+  
+  .filter-btn {
+    padding: 8px 15px;
+    margin: 3px;
+    font-size: 12px;
+  }
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+  }
+  
+  .contact-info .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-info .icon {
+    margin: 0 auto 15px;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  #mainmenu {
+    display: none;
+  }
+  
+  #mainmenu.menu-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+}
