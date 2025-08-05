@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SmokeExtractionPage: React.FC = () => {
+const FireFightingPage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -9,13 +9,13 @@ const SmokeExtractionPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Smoke Extraction System</h1>
+              <h1>Fire Fighting Works</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
                 <li className="sep">/</li>
                 <li><Link to="/services">Services</Link></li>
                 <li className="sep">/</li>
-                <li>Smoke Extraction System</li>
+                <li>Fire Fighting Works</li>
               </ul>
             </div>
           </div>
@@ -29,62 +29,62 @@ const SmokeExtractionPage: React.FC = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_1.jpg" 
+                  src="/assets/images/services/pic_5.jpg" 
                   className="img-responsive mb40" 
-                  alt="Smoke Extraction Systems"
+                  alt="Fire Fighting Systems"
                 />
                 
-                <h2>Advanced Smoke Extraction Systems</h2>
+                <h2>Professional Fire Fighting Systems</h2>
                 <p className="lead">
-                  An essential fire safety solution designed to remove smoke and harmful combustion 
-                  gases from a building during a fire, comprising a network of fans and ducts that 
-                  enhance safety by improving air quality and visibility.
+                  Comprehensive fire fighting systems including sprinklers, fire hose reels, and suppression 
+                  systems for complete fire protection. Our systems are designed to detect, control, and 
+                  extinguish fires effectively.
                 </p>
                 
                 <p>
-                  Power Shield Technical Service LLC specializes in designing and installing smoke 
-                  extraction systems that enhance fire safety by improving air quality and visibility, 
-                  making it easier for occupants to evacuate and for firefighters to control the blaze.
+                  Power Shield Technical Service LLC provides complete fire fighting solutions that meet 
+                  UAE Civil Defence standards. From design to installation and maintenance, we ensure 
+                  your property is equipped with reliable fire suppression systems.
                 </p>
 
                 <div className="spacer-single"></div>
 
-                <h3>Our Smoke Extraction Services</h3>
+                <h3>Our Fire Fighting Services</h3>
                 <div className="row">
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Natural Smoke Ventilation</li>
-                      <li>Mechanical Smoke Extraction</li>
-                      <li>Smoke Control Systems</li>
-                      <li>Pressurization Systems</li>
-                      <li>Fire Dampers & Curtains</li>
-                      <li>Emergency Ventilation Systems</li>
+                      <li>Fire Sprinkler Systems</li>
+                      <li>Fire Hose Reels</li>
+                      <li>Fire Extinguisher Supply & Installation</li>
+                      <li>Fire Suppression Systems</li>
+                      <li>Water Mist Systems</li>
+                      <li>Foam Systems</li>
                     </ul>
                   </div>
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Smoke Detection Integration</li>
-                      <li>Automatic Activation Systems</li>
-                      <li>Manual Override Controls</li>
-                      <li>Smoke Shaft Design</li>
-                      <li>Roof Ventilators</li>
-                      <li>System Testing & Commissioning</li>
+                      <li>Deluge Systems</li>
+                      <li>Pre-action Systems</li>
+                      <li>Dry Pipe Systems</li>
+                      <li>Wet Pipe Systems</li>
+                      <li>Fire Pumps & Boosters</li>
+                      <li>Fire Fighting Water Tanks</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="spacer-single"></div>
 
-                <h3>System Components</h3>
+                <h3>System Types</h3>
                 <div className="row">
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-wind id-color"></i>
+                        <i className="fa fa-tint id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Extraction Fans</h4>
-                        <p>High-capacity fans designed to remove smoke and hot gases efficiently.</p>
+                        <h4>Sprinkler Systems</h4>
+                        <p>Automatic sprinkler systems for immediate fire suppression response.</p>
                       </div>
                     </div>
                   </div>
@@ -92,11 +92,11 @@ const SmokeExtractionPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-arrows id-color"></i>
+                        <i className="fa fa-fire-extinguisher id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Ductwork Systems</h4>
-                        <p>Fire-rated ductwork designed to maintain integrity during fire conditions.</p>
+                        <h4>Fire Extinguishers</h4>
+                        <p>Portable fire extinguishers for different fire classes and applications.</p>
                       </div>
                     </div>
                   </div>
@@ -104,11 +104,11 @@ const SmokeExtractionPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-cog id-color"></i>
+                        <i className="fa fa-gear id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Control Systems</h4>
-                        <p>Intelligent control systems for automatic and manual smoke extraction activation.</p>
+                        <h4>Hose Reels</h4>
+                        <p>Fire hose reels for manual fire fighting and emergency response.</p>
                       </div>
                     </div>
                   </div>
@@ -116,39 +116,20 @@ const SmokeExtractionPage: React.FC = () => {
 
                 <div className="spacer-single"></div>
 
-                <h3>Benefits of Smoke Extraction</h3>
+                <h3>Our Expertise</h3>
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>Life Safety</h4>
+                    <h4>Design & Engineering</h4>
                     <p>
-                      Removes dangerous smoke and toxic gases, providing clear evacuation routes 
-                      and improving visibility for safe exit.
+                      Our expert engineers design fire fighting systems tailored to your building's 
+                      specific requirements and Civil Defence regulations.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Property Protection</h4>
+                    <h4>Installation & Testing</h4>
                     <p>
-                      Reduces smoke damage to building contents and structure, minimizing 
-                      property loss and cleanup costs.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="spacer-single"></div>
-
-                <div className="row">
-                  <div className="col-md-6">
-                    <h4>Fire Service Access</h4>
-                    <p>
-                      Improves conditions for firefighters, allowing better access and 
-                      more effective fire suppression operations.
-                    </p>
-                  </div>
-                  <div className="col-md-6">
-                    <h4>Code Compliance</h4>
-                    <p>
-                      Meets UAE Civil Defence requirements and international fire safety 
-                      standards for building compliance.
+                      Professional installation and comprehensive testing ensure your fire fighting 
+                      systems operate reliably when needed most.
                     </p>
                   </div>
                 </div>
@@ -161,8 +142,8 @@ const SmokeExtractionPage: React.FC = () => {
                   <h3>Our Services</h3>
                   <ul className="service-list">
                     <li><Link to="/services/fire-alarm">Fire Alarm Works</Link></li>
-                    <li><Link to="/services/fire-fighting">Fire Fighting Works</Link></li>
-                    <li><Link to="/services/smoke-extraction" className="active">Smoke Extraction System</Link></li>
+                    <li><Link to="/services/fire-fighting" className="active">Fire Fighting Works</Link></li>
+                    <li><Link to="/services/smoke-extraction">Smoke Extraction System</Link></li>
                     <li><Link to="/services/emergency-exit">Emergency Exit Lights</Link></li>
                     <li><Link to="/services/design-approvals">Design & Approvals</Link></li>
                     <li><Link to="/services/electrical">Electrical Works</Link></li>
@@ -192,7 +173,7 @@ const SmokeExtractionPage: React.FC = () => {
 
                 <div className="widget">
                   <h3>Get A Quote</h3>
-                  <p>Need smoke extraction systems? Contact us for professional design and installation.</p>
+                  <p>Need fire fighting systems for your property? Contact us for professional consultation.</p>
                   <Link to="/contact" className="btn btn-primary">
                     Request Quote
                   </Link>
@@ -208,10 +189,10 @@ const SmokeExtractionPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Enhance Fire Safety with Smoke Extraction</h2>
+              <h2>Protect Your Property with Fire Fighting Systems</h2>
               <p>
-                Improve evacuation safety and reduce property damage with our professional 
-                smoke extraction systems. Contact us for expert consultation.
+                Ensure maximum fire protection with our professionally designed and installed 
+                fire fighting systems. Contact us for expert consultation.
               </p>
             </div>
             <div className="col-md-4 text-right wow fadeInRight" data-wow-delay=".4s">
@@ -226,4 +207,4 @@ const SmokeExtractionPage: React.FC = () => {
   );
 };
 
-export default SmokeExtractionPage;
+export default FireFightingPage;

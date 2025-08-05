@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-interface ContactForm {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-}
-
-const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState<ContactForm>({
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -21,7 +13,7 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -29,7 +21,7 @@ const ContactPage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     

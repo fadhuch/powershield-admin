@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MaintenancePage: React.FC = () => {
+const PlumbingPage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -9,13 +9,13 @@ const MaintenancePage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Annual Maintenance Contract</h1>
+              <h1>Plumbing Works</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
                 <li className="sep">/</li>
                 <li><Link to="/services">Services</Link></li>
                 <li className="sep">/</li>
-                <li>Annual Maintenance Contract</li>
+                <li>Plumbing Works</li>
               </ul>
             </div>
           </div>
@@ -31,61 +31,61 @@ const MaintenancePage: React.FC = () => {
                 <img 
                   src="/assets/images/services/pic_6.jpg" 
                   className="img-responsive mb40" 
-                  alt="Annual Maintenance Contract"
+                  alt="Plumbing Works"
                 />
                 
-                <h2>Comprehensive Maintenance Services</h2>
+                <h2>Professional Plumbing Systems</h2>
                 <p className="lead">
-                  Our AMC services are backed by a team of highly trained and technically skilled 
-                  professionals, ensuring that your MEP systems, fire alarms, and firefighting 
-                  equipment remain in top condition year-round.
+                  Plumbing systems are essential for maintaining a healthy and functional building 
+                  environment. They provide a dependable supply of clean water for drinking, cooking, 
+                  and sanitation, while ensuring effective removal of wastewater.
                 </p>
                 
                 <p>
-                  Power Shield Technical Service LLC provides complete annual maintenance contracts 
-                  that ensure your building's essential fire protection and safety systems are 
-                  safeguarded and fully operational at all times. With our expert maintenance 
-                  support, you can trust that your systems will perform when needed most.
+                  Power Shield Technical Service LLC provides comprehensive plumbing solutions with 
+                  special expertise in fire fighting water supply systems. Our experienced plumbers 
+                  ensure all installations meet UAE plumbing codes and support both routine usage 
+                  and emergency fire protection scenarios.
                 </p>
 
                 <div className="spacer-single"></div>
 
-                <h3>Our Maintenance Services</h3>
+                <h3>Our Plumbing Services</h3>
                 <div className="row">
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Preventive Maintenance</li>
-                      <li>Emergency Repair Services</li>
-                      <li>System Testing & Inspection</li>
-                      <li>Equipment Replacement</li>
-                      <li>Performance Monitoring</li>
-                      <li>24/7 Technical Support</li>
+                      <li>Water Supply Systems</li>
+                      <li>Drainage & Sewage Systems</li>
+                      <li>Fire Fighting Water Supply</li>
+                      <li>Sanitary Installations</li>
+                      <li>Hot Water Systems</li>
+                      <li>Plumbing Maintenance</li>
                     </ul>
                   </div>
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Fire Alarm System Maintenance</li>
-                      <li>Sprinkler System Service</li>
-                      <li>Emergency Light Testing</li>
-                      <li>Smoke Extraction Service</li>
-                      <li>Electrical System Maintenance</li>
-                      <li>Plumbing System Service</li>
+                      <li>Water Tank Installation</li>
+                      <li>Pump Systems</li>
+                      <li>Pipe Installation & Repair</li>
+                      <li>Fixture Installation</li>
+                      <li>Leak Detection & Repair</li>
+                      <li>Emergency Plumbing Services</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="spacer-single"></div>
 
-                <h3>Maintenance Programs</h3>
+                <h3>Plumbing Systems</h3>
                 <div className="row">
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-calendar id-color"></i>
+                        <i className="fa fa-tint id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Scheduled Maintenance</h4>
-                        <p>Regular maintenance visits according to manufacturer and Civil Defence requirements.</p>
+                        <h4>Water Supply</h4>
+                        <p>Fresh water supply systems including tanks, pumps, and distribution networks.</p>
                       </div>
                     </div>
                   </div>
@@ -93,11 +93,11 @@ const MaintenancePage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-phone id-color"></i>
+                        <i className="fa fa-fire-extinguisher id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Emergency Response</h4>
-                        <p>24/7 emergency repair services with rapid response times for critical systems.</p>
+                        <h4>Fire Water Systems</h4>
+                        <p>Specialized water supply systems for fire fighting and sprinkler systems.</p>
                       </div>
                     </div>
                   </div>
@@ -105,11 +105,11 @@ const MaintenancePage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-chart-line id-color"></i>
+                        <i className="fa fa-wrench id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Performance Reports</h4>
-                        <p>Detailed maintenance reports and system performance analysis with recommendations.</p>
+                        <h4>Drainage Systems</h4>
+                        <p>Wastewater and storm water drainage systems with proper ventilation.</p>
                       </div>
                     </div>
                   </div>
@@ -117,52 +117,27 @@ const MaintenancePage: React.FC = () => {
 
                 <div className="spacer-single"></div>
 
-                <h3>Fire Protection System Maintenance</h3>
+                <h3>Fire Fighting Water Supply</h3>
                 <p>
-                  Our specialized maintenance programs for fire protection systems ensure compliance 
-                  with UAE Civil Defence regulations and optimal system performance. We maintain all 
-                  types of fire safety equipment according to manufacturer specifications and regulatory requirements.
+                  Our expertise includes specialized plumbing for fire protection systems. We design 
+                  and install dedicated water supply systems for sprinklers, fire hose reels, and 
+                  fire fighting equipment, ensuring adequate water pressure and flow rates for 
+                  effective fire suppression.
                 </p>
 
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>Fire Alarm Maintenance</h4>
-                    <ul className="list-style-2">
-                      <li>Detector cleaning and calibration</li>
-                      <li>Control panel testing</li>
-                      <li>Battery replacement</li>
-                      <li>Notification device testing</li>
-                      <li>System documentation updates</li>
-                    </ul>
-                  </div>
-                  <div className="col-md-6">
-                    <h4>Sprinkler System Service</h4>
-                    <ul className="list-style-2">
-                      <li>Valve and sprinkler head inspection</li>
-                      <li>Water flow testing</li>
-                      <li>Pump testing and maintenance</li>
-                      <li>Pipe pressure testing</li>
-                      <li>Tank level monitoring</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="spacer-single"></div>
-
-                <h3>AMC Benefits</h3>
-                <div className="row">
-                  <div className="col-md-6">
-                    <h4>Cost Savings</h4>
+                    <h4>Fire Water Tanks</h4>
                     <p>
-                      Preventive maintenance reduces costly breakdowns and extends equipment 
-                      life, providing significant long-term cost savings.
+                      Installation of dedicated fire water storage tanks with proper capacity 
+                      calculations and Civil Defence compliance.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Compliance Assurance</h4>
+                    <h4>Fire Pump Systems</h4>
                     <p>
-                      Regular maintenance ensures continuous compliance with Civil Defence 
-                      regulations and safety standards.
+                      Fire pump installation and testing to ensure adequate water pressure 
+                      for sprinkler and hose reel systems.
                     </p>
                   </div>
                 </div>
@@ -171,29 +146,46 @@ const MaintenancePage: React.FC = () => {
 
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>System Reliability</h4>
+                    <h4>Sprinkler Supply Lines</h4>
                     <p>
-                      Regular maintenance and testing ensure your fire protection systems 
-                      will operate reliably when needed most.
+                      Underground and above-ground piping systems designed specifically 
+                      for automatic sprinkler system supply.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Priority Service</h4>
+                    <h4>Hose Reel Connections</h4>
                     <p>
-                      AMC customers receive priority scheduling for both routine maintenance 
-                      and emergency repair services.
+                      Dedicated water supply lines for fire hose reels with proper 
+                      pressure and flow rate specifications.
                     </p>
                   </div>
                 </div>
 
                 <div className="spacer-single"></div>
 
-                <h3>Maintenance Documentation</h3>
+                <h3>Quality Materials & Installation</h3>
                 <p>
-                  We provide comprehensive maintenance documentation including service reports, 
-                  test certificates, compliance documentation, and maintenance schedules. All 
-                  documentation is maintained according to Civil Defence and insurance requirements.
+                  We use high-quality pipes, fittings, and fixtures from reputable manufacturers. 
+                  All installations comply with UAE plumbing codes, ADWEA standards, and Civil Defence 
+                  requirements for fire protection water systems.
                 </p>
+
+                <div className="row">
+                  <div className="col-md-6">
+                    <h4>Licensed Plumbers</h4>
+                    <p>
+                      Our team consists of licensed and experienced plumbers specializing 
+                      in commercial and fire protection plumbing systems.
+                    </p>
+                  </div>
+                  <div className="col-md-6">
+                    <h4>System Testing</h4>
+                    <p>
+                      Comprehensive pressure testing and flow testing to ensure all 
+                      plumbing systems operate efficiently and safely.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -208,8 +200,8 @@ const MaintenancePage: React.FC = () => {
                     <li><Link to="/services/emergency-exit">Emergency Exit Lights</Link></li>
                     <li><Link to="/services/design-approvals">Design & Approvals</Link></li>
                     <li><Link to="/services/electrical">Electrical Works</Link></li>
-                    <li><Link to="/services/plumbing">Plumbing Works</Link></li>
-                    <li><Link to="/services/maintenance" className="active">Maintenance Contract</Link></li>
+                    <li><Link to="/services/plumbing" className="active">Plumbing Works</Link></li>
+                    <li><Link to="/services/maintenance">Maintenance Contract</Link></li>
                   </ul>
                 </div>
 
@@ -234,22 +226,10 @@ const MaintenancePage: React.FC = () => {
 
                 <div className="widget">
                   <h3>Get A Quote</h3>
-                  <p>Need annual maintenance services? Contact us for a customized maintenance contract.</p>
+                  <p>Need plumbing services or fire water systems? Contact us for professional consultation.</p>
                   <Link to="/contact" className="btn btn-primary">
                     Request Quote
                   </Link>
-                </div>
-
-                <div className="widget">
-                  <h3>AMC Features</h3>
-                  <ul className="list-style-1">
-                    <li>Scheduled Maintenance Visits</li>
-                    <li>Emergency Repair Services</li>
-                    <li>Priority Customer Support</li>
-                    <li>Detailed Service Reports</li>
-                    <li>Compliance Documentation</li>
-                    <li>Equipment Performance Monitoring</li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -262,10 +242,10 @@ const MaintenancePage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Protect Your Investment with Regular Maintenance</h2>
+              <h2>Need Professional Plumbing Services?</h2>
               <p>
-                Ensure your fire protection systems remain reliable and compliant with our 
-                comprehensive annual maintenance contracts. Contact us today.
+                Get reliable plumbing installations and fire water supply systems from 
+                experienced professionals. Contact us for expert service.
               </p>
             </div>
             <div className="col-md-4 text-right wow fadeInRight" data-wow-delay=".4s">
@@ -280,4 +260,4 @@ const MaintenancePage: React.FC = () => {
   );
 };
 
-export default MaintenancePage;
+export default PlumbingPage;

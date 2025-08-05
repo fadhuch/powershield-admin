@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NavigationItem } from '../types';
 
-const Header: React.FC = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigationItems: NavigationItem[] = [
+  const navigationItems = [
     {
       id: 'home',
       label: 'Home',
@@ -53,7 +52,7 @@ const Header: React.FC = () => {
     },
   ];
 
-  const renderNavItem = (item: NavigationItem) => (
+  const renderNavItem = (item) => (
     <li key={item.id}>
       <Link to={item.href}>{item.label}</Link>
       {item.children && (

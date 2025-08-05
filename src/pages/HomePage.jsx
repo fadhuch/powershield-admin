@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -10,7 +10,7 @@ const HomePage: React.FC = () => {
         className="full-height text-light relative"
         data-stellar-background-ratio="0.5"
         style={{
-          background: `url(${process.env.PUBLIC_URL}/assets/images/background/bg-2.jpg) center center`,
+          background: `url(/assets/images/background/bg-2.jpg) center center`,
           backgroundSize: 'cover',
           backgroundAttachment: 'fixed',
           minHeight: '100vh',
@@ -104,105 +104,102 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="section-services" className="text-light" data-stellar-background-ratio=".2">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-              <h1>Our Services</h1>
-              <div className="separator"><span><i className="fa fa-circle"></i></span></div>
-              <div className="spacer-single"></div>
-            </div>
+       <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <h2 style={{ fontSize: '2.5em', color: '#873034', marginBottom: '20px' }}>Our Services</h2>
+            <p style={{ fontSize: '1.1em', color: '#666' }}>Comprehensive fire safety solutions for your protection</p>
           </div>
-
-          <div className="row">
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".2s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-bell" ></i>
-                </div>
-                <div className="text">
-                  <h4>Fire Alarm Works</h4>
-                  <p>
-                    Fire alarm systems designed to detect and alert building occupants 
-                    to smoke, fire, and other fire-related hazards.
-                  </p>
-                </div>
-              </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🔥</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Fire Alarm Systems</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                State-of-the-art fire detection and alarm systems designed to protect lives and property
+              </p>
             </div>
-
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".4s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-fire-extinguisher"></i>
-                </div>
-                <div className="text">
-                  <h4>Fire Fighting Works</h4>
-                  <p>
-                    Comprehensive fire fighting systems including sprinklers, 
-                    fire hose reels, and suppression systems.
-                  </p>
-                </div>
-              </div>
+            
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🧯</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Fire Fighting Equipment</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                Professional fire suppression systems including sprinklers and fire hose reels
+              </p>
             </div>
-
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".6s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-free-code-camp"></i>
-                </div>
-                <div className="text">
-                  <h4>Smoke Extraction System</h4>
-                  <p>
-                    Essential fire safety solution to remove smoke and harmful 
-                    combustion gases during fire emergencies.
-                  </p>
-                </div>
-              </div>
+            
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>💨</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Smoke Extraction</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                Advanced smoke extraction and ventilation systems for emergency situations
+              </p>
             </div>
-
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".8s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-sign-out"></i>
-                </div>
-                <div className="text">
-                  <h4>Emergency Exit Lights</h4>
-                  <p>
-                    Emergency exit lighting systems ensuring clear visibility 
-                    and guidance during power failures and emergencies.
-                  </p>
-                </div>
-              </div>
+            
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🚪</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Emergency Exit Lights</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                Emergency lighting systems ensuring safe evacuation during power failures
+              </p>
             </div>
-
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay="1s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-paint-brush"></i>
-                </div>
-                <div className="text">
-                  <h4>Design & Approvals</h4>
-                  <p>
-                    Fire protection system drawings and Civil Defence 
-                    approvals for complete regulatory compliance.
-                  </p>
-                </div>
-              </div>
+            
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>📋</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Design & Approvals</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                Fire protection system drawings and Civil Defence approvals for compliance
+              </p>
             </div>
-
-            <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay="1.2s">
-              <div className="feature-box-small-icon">
-                <div className="icon">
-                  <i className=" id-color fa fa-pencil"></i>
-                </div>
-                <div className="text">
-                  <h4>Maintenance Contract</h4>
-                  <p>
-                    Annual maintenance contracts ensuring your fire protection 
-                    systems remain in optimal condition year-round.
-                  </p>
-                </div>
-              </div>
+            
+            <div style={{ 
+              padding: '30px', 
+              textAlign: 'center', 
+              border: '1px solid #eee', 
+              borderRadius: '10px',
+              transition: 'transform 0.3s ease',
+              cursor: 'pointer'
+            }}>
+              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🔧</div>
+              <h3 style={{ color: '#873034', marginBottom: '15px' }}>Maintenance Services</h3>
+              <p style={{ color: '#666', lineHeight: '1.6' }}>
+                Annual maintenance contracts to keep your fire protection systems optimal
+              </p>
             </div>
           </div>
         </div>

@@ -20,6 +20,8 @@ import MaintenancePage from './pages/services/Maintenance';
 import './App.css';
 
 function App() {
+  console.log('App component with full routing rendering...');
+  
   return (
     <Router>
       <Layout>
@@ -41,9 +43,9 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
           <Route path="/projects/grid" element={<ProjectsPage />} />
           <Route path="/gallery" element={<ProjectsPage />} />
-          <Route path="/shop" element={<div>Shop Page - Coming Soon</div>} />
+          <Route path="/shop" element={<div style={{padding: '20px'}}>Shop Page - Coming Soon</div>} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<div>404 - Page Not Found</div>} />
+          <Route path="*" element={<div style={{padding: '20px'}}>404 - Page Not Found</div>} />
         </Routes>
       </Layout>
     </Router>

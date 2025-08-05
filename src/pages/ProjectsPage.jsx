@@ -1,22 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  client: string;
-  duration: string;
-  location: string;
-  status: 'Completed' | 'In Progress' | 'Planning';
-}
-
-const ProjectsPage: React.FC = () => {
+const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const projects: Project[] = [
+  const projects = [
     {
       id: 1,
       title: 'Modern Office Complex',
@@ -120,7 +108,7 @@ const ProjectsPage: React.FC = () => {
     ? projects 
     : projects.filter(project => project.category === activeFilter);
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case 'Completed':
         return 'success';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FireFightingPage: React.FC = () => {
+const EmergencyExitPage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -9,13 +9,13 @@ const FireFightingPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Fire Fighting Works</h1>
+              <h1>Emergency Exit Light Systems</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
                 <li className="sep">/</li>
                 <li><Link to="/services">Services</Link></li>
                 <li className="sep">/</li>
-                <li>Fire Fighting Works</li>
+                <li>Emergency Exit Light Systems</li>
               </ul>
             </div>
           </div>
@@ -29,62 +29,62 @@ const FireFightingPage: React.FC = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_5.jpg" 
+                  src="/assets/images/services/pic_3.jpg" 
                   className="img-responsive mb40" 
-                  alt="Fire Fighting Systems"
+                  alt="Emergency Exit Light Systems"
                 />
                 
-                <h2>Professional Fire Fighting Systems</h2>
+                <h2>Professional Emergency Exit Lighting</h2>
                 <p className="lead">
-                  Comprehensive fire fighting systems including sprinklers, fire hose reels, and suppression 
-                  systems for complete fire protection. Our systems are designed to detect, control, and 
-                  extinguish fires effectively.
+                  Power Shield emergency exit lighting systems ensure clear visibility and guidance 
+                  during emergencies, particularly in cases of fire or power failure. These lights 
+                  remain operational even when the main power supply is disrupted.
                 </p>
                 
                 <p>
-                  Power Shield Technical Service LLC provides complete fire fighting solutions that meet 
-                  UAE Civil Defence standards. From design to installation and maintenance, we ensure 
-                  your property is equipped with reliable fire suppression systems.
+                  Our emergency exit lighting systems provide a well-lit path for safe evacuation, 
+                  meeting UAE Civil Defence requirements and international safety standards. We 
+                  design, install, and maintain systems that ensure occupant safety during emergencies.
                 </p>
 
                 <div className="spacer-single"></div>
 
-                <h3>Our Fire Fighting Services</h3>
+                <h3>Our Emergency Lighting Services</h3>
                 <div className="row">
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Fire Sprinkler Systems</li>
-                      <li>Fire Hose Reels</li>
-                      <li>Fire Extinguisher Supply & Installation</li>
-                      <li>Fire Suppression Systems</li>
-                      <li>Water Mist Systems</li>
-                      <li>Foam Systems</li>
+                      <li>LED Emergency Exit Signs</li>
+                      <li>Emergency Lighting Systems</li>
+                      <li>Battery Backup Systems</li>
+                      <li>Self-Testing Exit Lights</li>
+                      <li>Photoluminescent Signs</li>
+                      <li>Emergency Path Marking</li>
                     </ul>
                   </div>
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Deluge Systems</li>
-                      <li>Pre-action Systems</li>
-                      <li>Dry Pipe Systems</li>
-                      <li>Wet Pipe Systems</li>
-                      <li>Fire Pumps & Boosters</li>
-                      <li>Fire Fighting Water Tanks</li>
+                      <li>Central Battery Systems</li>
+                      <li>Maintained Lighting</li>
+                      <li>Non-Maintained Lighting</li>
+                      <li>Combined Emergency Lighting</li>
+                      <li>Escape Route Lighting</li>
+                      <li>Area Lighting Systems</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="spacer-single"></div>
 
-                <h3>System Types</h3>
+                <h3>System Features</h3>
                 <div className="row">
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-tint id-color"></i>
+                        <i className="fa fa-sign-out id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Sprinkler Systems</h4>
-                        <p>Automatic sprinkler systems for immediate fire suppression response.</p>
+                        <h4>Exit Signs</h4>
+                        <p>Illuminated exit signs with directional arrows and multilingual text options.</p>
                       </div>
                     </div>
                   </div>
@@ -92,11 +92,11 @@ const FireFightingPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-fire-extinguisher id-color"></i>
+                        <i className="fa fa-battery-full id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Fire Extinguishers</h4>
-                        <p>Portable fire extinguishers for different fire classes and applications.</p>
+                        <h4>Battery Backup</h4>
+                        <p>Reliable battery backup systems ensuring continuous operation during power outages.</p>
                       </div>
                     </div>
                   </div>
@@ -104,11 +104,11 @@ const FireFightingPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-gear id-color"></i>
+                        <i className="fa fa-lightbulb-o id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Hose Reels</h4>
-                        <p>Fire hose reels for manual fire fighting and emergency response.</p>
+                        <h4>LED Technology</h4>
+                        <p>Energy-efficient LED lights with long life and low maintenance requirements.</p>
                       </div>
                     </div>
                   </div>
@@ -116,23 +116,51 @@ const FireFightingPage: React.FC = () => {
 
                 <div className="spacer-single"></div>
 
-                <h3>Our Expertise</h3>
+                <h3>Types of Emergency Lighting</h3>
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>Design & Engineering</h4>
+                    <h4>Escape Route Lighting</h4>
                     <p>
-                      Our expert engineers design fire fighting systems tailored to your building's 
-                      specific requirements and Civil Defence regulations.
+                      Provides illumination along designated escape routes to enable safe 
+                      movement of occupants towards emergency exits.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Installation & Testing</h4>
+                    <h4>Open Area Lighting</h4>
                     <p>
-                      Professional installation and comprehensive testing ensure your fire fighting 
-                      systems operate reliably when needed most.
+                      Anti-panic lighting in large areas to prevent panic and allow 
+                      occupants to reach familiar areas with escape route lighting.
                     </p>
                   </div>
                 </div>
+
+                <div className="spacer-single"></div>
+
+                <div className="row">
+                  <div className="col-md-6">
+                    <h4>High Risk Task Area</h4>
+                    <p>
+                      Specialized lighting for areas where potentially dangerous processes 
+                      need to be safely shut down in an emergency.
+                    </p>
+                  </div>
+                  <div className="col-md-6">
+                    <h4>Standby Lighting</h4>
+                    <p>
+                      Enables normal activities to continue or restart safely during 
+                      mains power supply interruption.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="spacer-single"></div>
+
+                <h3>Compliance & Standards</h3>
+                <p>
+                  All our emergency lighting systems comply with UAE Civil Defence regulations, 
+                  IBC (International Building Code), NFPA 101 (Life Safety Code), and EN standards. 
+                  We ensure proper luminance levels, duration of operation, and regular testing protocols.
+                </p>
               </div>
             </div>
 
@@ -142,9 +170,9 @@ const FireFightingPage: React.FC = () => {
                   <h3>Our Services</h3>
                   <ul className="service-list">
                     <li><Link to="/services/fire-alarm">Fire Alarm Works</Link></li>
-                    <li><Link to="/services/fire-fighting" className="active">Fire Fighting Works</Link></li>
+                    <li><Link to="/services/fire-fighting">Fire Fighting Works</Link></li>
                     <li><Link to="/services/smoke-extraction">Smoke Extraction System</Link></li>
-                    <li><Link to="/services/emergency-exit">Emergency Exit Lights</Link></li>
+                    <li><Link to="/services/emergency-exit" className="active">Emergency Exit Lights</Link></li>
                     <li><Link to="/services/design-approvals">Design & Approvals</Link></li>
                     <li><Link to="/services/electrical">Electrical Works</Link></li>
                     <li><Link to="/services/plumbing">Plumbing Works</Link></li>
@@ -173,7 +201,7 @@ const FireFightingPage: React.FC = () => {
 
                 <div className="widget">
                   <h3>Get A Quote</h3>
-                  <p>Need fire fighting systems for your property? Contact us for professional consultation.</p>
+                  <p>Need emergency lighting systems? Contact us for professional consultation and installation.</p>
                   <Link to="/contact" className="btn btn-primary">
                     Request Quote
                   </Link>
@@ -189,10 +217,10 @@ const FireFightingPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Protect Your Property with Fire Fighting Systems</h2>
+              <h2>Ensure Safe Evacuation with Emergency Lighting</h2>
               <p>
-                Ensure maximum fire protection with our professionally designed and installed 
-                fire fighting systems. Contact us for expert consultation.
+                Protect your occupants with reliable emergency exit lighting systems. 
+                Contact us for Civil Defence approved solutions.
               </p>
             </div>
             <div className="col-md-4 text-right wow fadeInRight" data-wow-delay=".4s">
@@ -207,4 +235,4 @@ const FireFightingPage: React.FC = () => {
   );
 };
 
-export default FireFightingPage;
+export default EmergencyExitPage;

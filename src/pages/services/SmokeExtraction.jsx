@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const EmergencyExitPage: React.FC = () => {
+const SmokeExtractionPage = () => {
   return (
     <>
       {/* Hero Section */}
@@ -9,13 +9,13 @@ const EmergencyExitPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1>Emergency Exit Light Systems</h1>
+              <h1>Smoke Extraction System</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
                 <li className="sep">/</li>
                 <li><Link to="/services">Services</Link></li>
                 <li className="sep">/</li>
-                <li>Emergency Exit Light Systems</li>
+                <li>Smoke Extraction System</li>
               </ul>
             </div>
           </div>
@@ -29,62 +29,62 @@ const EmergencyExitPage: React.FC = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_3.jpg" 
+                  src="/assets/images/services/pic_1.jpg" 
                   className="img-responsive mb40" 
-                  alt="Emergency Exit Light Systems"
+                  alt="Smoke Extraction Systems"
                 />
                 
-                <h2>Professional Emergency Exit Lighting</h2>
+                <h2>Advanced Smoke Extraction Systems</h2>
                 <p className="lead">
-                  Power Shield emergency exit lighting systems ensure clear visibility and guidance 
-                  during emergencies, particularly in cases of fire or power failure. These lights 
-                  remain operational even when the main power supply is disrupted.
+                  An essential fire safety solution designed to remove smoke and harmful combustion 
+                  gases from a building during a fire, comprising a network of fans and ducts that 
+                  enhance safety by improving air quality and visibility.
                 </p>
                 
                 <p>
-                  Our emergency exit lighting systems provide a well-lit path for safe evacuation, 
-                  meeting UAE Civil Defence requirements and international safety standards. We 
-                  design, install, and maintain systems that ensure occupant safety during emergencies.
+                  Power Shield Technical Service LLC specializes in designing and installing smoke 
+                  extraction systems that enhance fire safety by improving air quality and visibility, 
+                  making it easier for occupants to evacuate and for firefighters to control the blaze.
                 </p>
 
                 <div className="spacer-single"></div>
 
-                <h3>Our Emergency Lighting Services</h3>
+                <h3>Our Smoke Extraction Services</h3>
                 <div className="row">
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>LED Emergency Exit Signs</li>
-                      <li>Emergency Lighting Systems</li>
-                      <li>Battery Backup Systems</li>
-                      <li>Self-Testing Exit Lights</li>
-                      <li>Photoluminescent Signs</li>
-                      <li>Emergency Path Marking</li>
+                      <li>Natural Smoke Ventilation</li>
+                      <li>Mechanical Smoke Extraction</li>
+                      <li>Smoke Control Systems</li>
+                      <li>Pressurization Systems</li>
+                      <li>Fire Dampers & Curtains</li>
+                      <li>Emergency Ventilation Systems</li>
                     </ul>
                   </div>
                   <div className="col-md-6">
                     <ul className="list-style-1">
-                      <li>Central Battery Systems</li>
-                      <li>Maintained Lighting</li>
-                      <li>Non-Maintained Lighting</li>
-                      <li>Combined Emergency Lighting</li>
-                      <li>Escape Route Lighting</li>
-                      <li>Area Lighting Systems</li>
+                      <li>Smoke Detection Integration</li>
+                      <li>Automatic Activation Systems</li>
+                      <li>Manual Override Controls</li>
+                      <li>Smoke Shaft Design</li>
+                      <li>Roof Ventilators</li>
+                      <li>System Testing & Commissioning</li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="spacer-single"></div>
 
-                <h3>System Features</h3>
+                <h3>System Components</h3>
                 <div className="row">
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-sign-out id-color"></i>
+                        <i className="fa fa-wind id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Exit Signs</h4>
-                        <p>Illuminated exit signs with directional arrows and multilingual text options.</p>
+                        <h4>Extraction Fans</h4>
+                        <p>High-capacity fans designed to remove smoke and hot gases efficiently.</p>
                       </div>
                     </div>
                   </div>
@@ -92,11 +92,11 @@ const EmergencyExitPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-battery-full id-color"></i>
+                        <i className="fa fa-arrows id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>Battery Backup</h4>
-                        <p>Reliable battery backup systems ensuring continuous operation during power outages.</p>
+                        <h4>Ductwork Systems</h4>
+                        <p>Fire-rated ductwork designed to maintain integrity during fire conditions.</p>
                       </div>
                     </div>
                   </div>
@@ -104,11 +104,11 @@ const EmergencyExitPage: React.FC = () => {
                   <div className="col-md-4 mb30">
                     <div className="feature-box">
                       <div className="icon">
-                        <i className="fa fa-lightbulb-o id-color"></i>
+                        <i className="fa fa-cog id-color"></i>
                       </div>
                       <div className="text">
-                        <h4>LED Technology</h4>
-                        <p>Energy-efficient LED lights with long life and low maintenance requirements.</p>
+                        <h4>Control Systems</h4>
+                        <p>Intelligent control systems for automatic and manual smoke extraction activation.</p>
                       </div>
                     </div>
                   </div>
@@ -116,20 +116,20 @@ const EmergencyExitPage: React.FC = () => {
 
                 <div className="spacer-single"></div>
 
-                <h3>Types of Emergency Lighting</h3>
+                <h3>Benefits of Smoke Extraction</h3>
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>Escape Route Lighting</h4>
+                    <h4>Life Safety</h4>
                     <p>
-                      Provides illumination along designated escape routes to enable safe 
-                      movement of occupants towards emergency exits.
+                      Removes dangerous smoke and toxic gases, providing clear evacuation routes 
+                      and improving visibility for safe exit.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Open Area Lighting</h4>
+                    <h4>Property Protection</h4>
                     <p>
-                      Anti-panic lighting in large areas to prevent panic and allow 
-                      occupants to reach familiar areas with escape route lighting.
+                      Reduces smoke damage to building contents and structure, minimizing 
+                      property loss and cleanup costs.
                     </p>
                   </div>
                 </div>
@@ -138,29 +138,20 @@ const EmergencyExitPage: React.FC = () => {
 
                 <div className="row">
                   <div className="col-md-6">
-                    <h4>High Risk Task Area</h4>
+                    <h4>Fire Service Access</h4>
                     <p>
-                      Specialized lighting for areas where potentially dangerous processes 
-                      need to be safely shut down in an emergency.
+                      Improves conditions for firefighters, allowing better access and 
+                      more effective fire suppression operations.
                     </p>
                   </div>
                   <div className="col-md-6">
-                    <h4>Standby Lighting</h4>
+                    <h4>Code Compliance</h4>
                     <p>
-                      Enables normal activities to continue or restart safely during 
-                      mains power supply interruption.
+                      Meets UAE Civil Defence requirements and international fire safety 
+                      standards for building compliance.
                     </p>
                   </div>
                 </div>
-
-                <div className="spacer-single"></div>
-
-                <h3>Compliance & Standards</h3>
-                <p>
-                  All our emergency lighting systems comply with UAE Civil Defence regulations, 
-                  IBC (International Building Code), NFPA 101 (Life Safety Code), and EN standards. 
-                  We ensure proper luminance levels, duration of operation, and regular testing protocols.
-                </p>
               </div>
             </div>
 
@@ -171,8 +162,8 @@ const EmergencyExitPage: React.FC = () => {
                   <ul className="service-list">
                     <li><Link to="/services/fire-alarm">Fire Alarm Works</Link></li>
                     <li><Link to="/services/fire-fighting">Fire Fighting Works</Link></li>
-                    <li><Link to="/services/smoke-extraction">Smoke Extraction System</Link></li>
-                    <li><Link to="/services/emergency-exit" className="active">Emergency Exit Lights</Link></li>
+                    <li><Link to="/services/smoke-extraction" className="active">Smoke Extraction System</Link></li>
+                    <li><Link to="/services/emergency-exit">Emergency Exit Lights</Link></li>
                     <li><Link to="/services/design-approvals">Design & Approvals</Link></li>
                     <li><Link to="/services/electrical">Electrical Works</Link></li>
                     <li><Link to="/services/plumbing">Plumbing Works</Link></li>
@@ -201,7 +192,7 @@ const EmergencyExitPage: React.FC = () => {
 
                 <div className="widget">
                   <h3>Get A Quote</h3>
-                  <p>Need emergency lighting systems? Contact us for professional consultation and installation.</p>
+                  <p>Need smoke extraction systems? Contact us for professional design and installation.</p>
                   <Link to="/contact" className="btn btn-primary">
                     Request Quote
                   </Link>
@@ -217,10 +208,10 @@ const EmergencyExitPage: React.FC = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Ensure Safe Evacuation with Emergency Lighting</h2>
+              <h2>Enhance Fire Safety with Smoke Extraction</h2>
               <p>
-                Protect your occupants with reliable emergency exit lighting systems. 
-                Contact us for Civil Defence approved solutions.
+                Improve evacuation safety and reduce property damage with our professional 
+                smoke extraction systems. Contact us for expert consultation.
               </p>
             </div>
             <div className="col-md-4 text-right wow fadeInRight" data-wow-delay=".4s">
@@ -235,4 +226,4 @@ const EmergencyExitPage: React.FC = () => {
   );
 };
 
-export default EmergencyExitPage;
+export default SmokeExtractionPage;

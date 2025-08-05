@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const DesignApprovalsPage: React.FC = () => {
+const DesignApprovalsPage = () => {
   return (
     <>
       {/* Hero Section */}
