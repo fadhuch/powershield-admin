@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ServiceIcons from '../components/ServiceIcons';
 
 const ServicesPage = () => {
   const services = [
     {
       id: 'fire-alarm',
-      title: 'Fire Alarm Works',
-      description: 'A fire alarm system is a crucial safety mechanism designed to detect and alert building occupants and emergency responders to the presence of smoke, fire, carbon monoxide, or other fire-related hazards.',
-      icon: 'fa-bell',
+      title: 'Fire Alarm Systems',
+      description: 'State-of-the-art fire detection and alarm systems designed to protect lives and property with comprehensive smoke, heat, and fire detection capabilities.',
+      iconComponent: ServiceIcons.FireAlarm,
       image: '/assets/images/services/pic_1.jpg',
       features: [
         'Smoke Detection Systems',
@@ -20,9 +21,9 @@ const ServicesPage = () => {
     },
     {
       id: 'fire-fighting',
-      title: 'Fire Fighting Works',
-      description: 'Comprehensive fire fighting systems including sprinklers, fire hose reels, and suppression systems for complete fire protection.',
-      icon: 'fa-fire-extinguisher',
+      title: 'Fire Fighting Equipment',
+      description: 'Professional fire suppression systems including sprinklers and fire hose reels for complete fire protection and rapid response.',
+      iconComponent: ServiceIcons.FireFighting,
       image: '/assets/images/services/pic_2.jpg',
       features: [
         'Fire Sprinkler Systems',
@@ -35,9 +36,9 @@ const ServicesPage = () => {
     },
     {
       id: 'smoke-extraction',
-      title: 'Smoke Extraction System',
-      description: 'An essential fire safety solution designed to remove smoke and harmful combustion gases from a building during a fire, comprising a network of fans and ducts.',
-      icon: 'fa-wind',
+      title: 'Smoke Extraction',
+      description: 'Advanced smoke extraction and ventilation systems for emergency situations, removing harmful combustion gases during fire events.',
+      iconComponent: ServiceIcons.SmokeExtraction,
       image: '/assets/images/services/pic_3.jpg',
       features: [
         'Natural Smoke Ventilation',
@@ -50,9 +51,9 @@ const ServicesPage = () => {
     },
     {
       id: 'emergency-exit',
-      title: 'Emergency Exit Light Systems',
-      description: 'Power Shield emergency exit lighting systems ensure clear visibility and guidance during emergencies, particularly in cases of fire or power failure.',
-      icon: 'fa-sign-out',
+      title: 'Emergency Exit Lights',
+      description: 'Emergency lighting systems ensuring safe evacuation during power failures with clear visibility and guidance pathways.',
+      iconComponent: ServiceIcons.EmergencyExit,
       image: '/assets/images/services/pic_4.jpg',
       features: [
         'LED Emergency Exit Signs',
@@ -65,9 +66,9 @@ const ServicesPage = () => {
     },
     {
       id: 'design-approvals',
-      title: 'Design Drawings & Approvals',
-      description: 'We create detailed, high-quality fire protection system plans tailored to your project\'s specific needs and handle the entire approval process with Civil Defence.',
-      icon: 'fa-pencil-ruler',
+      title: 'Design & Approvals',
+      description: 'Fire protection system drawings and Civil Defence approvals for compliance with comprehensive design and documentation services.',
+      iconComponent: ServiceIcons.DesignApprovals,
       image: '/assets/images/services/pic_5.jpg',
       features: [
         'Fire Protection System Drawings',
@@ -79,40 +80,10 @@ const ServicesPage = () => {
       ]
     },
     {
-      id: 'electrical',
-      title: 'Electrical Works',
-      description: 'Electrical systems form the backbone of modern infrastructure, ensuring a continuous, safe, and reliable power supply for all aspects of a building.',
-      icon: 'fa-bolt',
-      image: '/assets/images/services/pic_6.jpg',
-      features: [
-        'Power Distribution Systems',
-        'Lighting Design & Installation',
-        'Emergency Power Systems',
-        'Fire Alarm Electrical Works',
-        'Security System Wiring',
-        'Building Automation Systems'
-      ]
-    },
-    {
-      id: 'plumbing',
-      title: 'Plumbing Works',
-      description: 'Plumbing systems are essential for maintaining a healthy and functional building environment, providing dependable supply of clean water and effective wastewater removal.',
-      icon: 'fa-wrench',
-      image: '/assets/images/services/pic_6.jpg',
-      features: [
-        'Water Supply Systems',
-        'Drainage & Sewage Systems',
-        'Fire Fighting Water Supply',
-        'Sanitary Installations',
-        'Hot Water Systems',
-        'Plumbing Maintenance'
-      ]
-    },
-    {
       id: 'maintenance',
-      title: 'Annual Maintenance Contract',
-      description: 'Our AMC services are backed by highly trained and technically skilled professionals, ensuring that your MEP systems, fire alarms, and firefighting equipment remain in top condition.',
-      icon: 'fa-tools',
+      title: 'Maintenance Services',
+      description: 'Annual maintenance contracts to keep your fire protection systems optimal with professional inspection and repair services.',
+      iconComponent: ServiceIcons.Maintenance,
       image: '/assets/images/services/pic_6.jpg',
       features: [
         'Preventive Maintenance',
@@ -167,7 +138,7 @@ const ServicesPage = () => {
               <div key={service.id} className="col-md-4 mb40 wow fadeInUp" data-wow-delay={`.${(index + 1) * 2}s`}>
                 <div className="feature-box-small-icon">
                   <div className="icon">
-                    <i className={`id-color fa ${service.icon}`}></i>
+                    <service.iconComponent />
                   </div>
                   <div className="text">
                     <h4>{service.title}</h4>

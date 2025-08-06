@@ -1,0 +1,66 @@
+/* Services Page Custom Styles */
+
+.feature-box-small-icon .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faebd7;
+  border-radius: 50%;
+}
+
+.feature-box-small-icon .icon svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+.feature-box-small-icon .text {
+  padding-left: 90px;
+}
+
+.feature-box-small-icon .text h4 {
+  color: #873034;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.feature-box-small-icon .text p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.feature-box-small-icon .text .btn-line {
+  color: #873034;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #873034;
+  transition: all 0.3s ease;
+}
+
+.feature-box-small-icon .text .btn-line:hover {
+  color: #5a1e21;
+  border-bottom-color: #5a1e21;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-box-small-icon {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .feature-box-small-icon .icon {
+    position: relative;
+    margin: 0 auto 20px auto;
+  }
+  
+  .feature-box-small-icon .text {
+    padding-left: 0;
+  }
+}
