@@ -1,3 +1,21 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.powershieldllc.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent overloading the server)
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Allow important pages for SEO
+Allow: /
+Allow: /services
+Allow: /about
+Allow: /projects
+Allow: /contact
+Allow: /careers

@@ -36,10 +36,10 @@ const HomePage = () => {
                   </div>
                 </div>
                 <p className="wow fadeInUp" data-wow-delay="1.1s">
-                  Power Shield Technical Service LLC is one of the leading fire protection companies 
-                  approved by the Civil Defence for supply, installation, and maintenance of various 
+                  Power Shield Technical Service LLC is the leading fire and safety company in Umm Al Quwain, UAE. 
+                  We are approved by the Civil Defence for supply, installation, and maintenance of various 
                   fire and safety equipment including fire extinguishers, fire alarm systems, 
-                  fire hose reels, sprinkler systems, and emergency exit lights.
+                  fire hose reels, sprinkler systems, and emergency exit lights throughout Umm Al Quwain and the UAE.
                 </p>
               </div>
             </div>
@@ -63,11 +63,11 @@ const HomePage = () => {
                 About <span className="id-color">Power Shield</span>
               </div>
               <p className="lead">
-                Power Shield Technical Service LLC is a leading fire protection company 
-                approved by Civil Defence for comprehensive fire safety solutions.
+                Power Shield Technical Service LLC is the leading fire and safety company in Umm Al Quwain, 
+                approved by Civil Defence for comprehensive fire protection and safety solutions.
               </p>
               <p>
-                We specialize in providing innovative fire protection and safety solutions, 
+                We specialize in providing innovative fire protection and safety solutions in Umm Al Quwain and throughout the UAE, 
                 offering services ranging from fire alarm systems to complete fire fighting 
                 installations. Our team of experts ensures quality and excellence in every 
                 project we undertake, with full Civil Defence approval and compliance.

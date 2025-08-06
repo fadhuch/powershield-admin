@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import JobApplicationPage from './pages/JobApplicationPage';
 import AdminCareersPage from './pages/AdminCareersPage';
+import UmmAlQuwainPage from './pages/UmmAlQuwainPage';
 
 // Import individual service pages
 import FireAlarmPage from './pages/services/FireAlarm';
@@ -40,6 +41,9 @@ function App() {
           <Route path="/services/electrical" element={<ElectricalPage />} />
           <Route path="/services/plumbing" element={<PlumbingPage />} />
           <Route path="/services/maintenance" element={<MaintenancePage />} />
+          <Route path="/umm-al-quwain" element={<UmmAlQuwainPage />} />
+          <Route path="/umm-al-quwain-fire-safety" element={<UmmAlQuwainPage />} />
+          <Route path="/fire-safety-umm-al-quwain" element={<UmmAlQuwainPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
           <Route path="/projects/grid" element={<ProjectsPage />} />
