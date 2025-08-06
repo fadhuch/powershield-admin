@@ -94,7 +94,6 @@ overflow:visible;
 /* ================================================== */
 	header {
 	width: 100%;
-	height: 80px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -217,13 +216,11 @@ overflow:visible;
 	padding-bottom:2px;
 	}
 	header.smaller #mainmenu ul{
-	top:70px;
 	}
 	header.smaller #mainmenu ul ul{
-	top:0px;
+	top: calc(100% - 1px);
 	}
 	header.smaller {
-	height: 70px;
 	background:rgba(50,50,50,.95);
 	position:fixed;
 	z-index:1200 !important;
@@ -268,15 +265,13 @@ overflow:visible;
 	}
 		
 	header.de_header_2{
-		height:125px;	
 	}
 	
 	header.de_header_2.smaller {
-		height:70px;
 	}
 	
 	header.de_header_2.smaller .info{
-		position:absolute;
+		
 		opacity:0;
 		z-index:-1;
 	}

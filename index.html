@@ -50,5 +50,96 @@
     <script src="/assets/js/jquery.stellar.min.js"></script>
     <script src="/assets/js/jquery.countTo.js"></script>
     <script src="/assets/js/designesia.js"></script>
+    
+    <!-- React Router Navigation Fix for Text Slider -->
+    <script>
+      // Function to re-initialize text slider specifically
+      function initializeTextSlider() {
+        if (jQuery && jQuery.fn.owlCarousel) {
+          jQuery(".text-slider").each(function() {
+            var $this = jQuery(this);
+            
+            // Destroy existing carousel if it exists
+            if ($this.hasClass('owl-carousel')) {
+              $this.trigger('destroy.owl.carousel');
+              $this.removeClass('owl-carousel owl-loaded owl-drag');
+              $this.find('.owl-wrapper, .owl-wrapper-outer').children().unwrap();
+              $this.removeData();
+            }
+            
+            // Re-initialize with the exact same settings as designesia.js
+            $this.owlCarousel({
+              items: 1,
+              singleItem: true,
+              navigation: false,
+              pagination: false,
+              mouseDrag: false,
+              touchDrag: false,
+              autoPlay: 2500,
+              transitionStyle: "goDown"
+            });
+          });
+        }
+        
+        // Also re-initialize WOW.js for animations
+        if (typeof WOW !== 'undefined') {
+          new WOW().init();
+        }
+      }
+
+      // Initialize on page load (backup for original initialization)
+      jQuery(document).ready(function() {
+        setTimeout(initializeTextSlider, 500);
+      });
+
+      // Re-initialize when React Router navigates
+      if (window.MutationObserver) {
+        var observer = new MutationObserver(function(mutations) {
+          var shouldReinit = false;
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+              for (var i = 0; i < mutation.addedNodes.length; i++) {
+                var node = mutation.addedNodes[i];
+                if (node.nodeType === 1) {
+                  // Check if the added node contains or is a text-slider
+                  if (node.querySelector && (
+                    node.querySelector('.text-slider') || 
+                    node.classList.contains('text-slider') ||
+                    node.querySelector('.wow') ||
+                    node.classList.contains('wow')
+                  )) {
+                    shouldReinit = true;
+                    break;
+                  }
+                }
+              }
+            }
+          });
+          
+          if (shouldReinit) {
+            setTimeout(initializeTextSlider, 300);
+          }
+        });
+
+        // Start observing the document for changes
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      }
+      
+      // Alternative method: Listen for React Router navigation
+      if (window.history && window.history.pushState) {
+        var originalPushState = window.history.pushState;
+        window.history.pushState = function() {
+          originalPushState.apply(window.history, arguments);
+          setTimeout(initializeTextSlider, 300);
+        };
+        
+        window.addEventListener('popstate', function() {
+          setTimeout(initializeTextSlider, 300);
+        });
+      }
+    </script>
   </body>
 </html>

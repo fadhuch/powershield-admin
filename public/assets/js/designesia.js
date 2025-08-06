@@ -59,9 +59,12 @@
 		}
 	}
 	/* --------------------------------------------------
-	 * header | sticky
+	 * header | sticky - DISABLED FOR FIXED HEADER
 	 * --------------------------------------------------*/
 	function header_sticky() {
+		// Disabled for fixed header implementation
+		// Header is now always fixed in position via CSS
+		/*
 		jQuery("header").addClass("clone", 1000, "easeOutBounce");
 		var $document = $(document);
 		var vscroll = 0;
@@ -75,6 +78,7 @@
 			jQuery("header.autoshow").addClass("scrollOff");
 			vscroll = 0;
 		}
+		*/
 	}
 	
 	/* --------------------------------------------------
@@ -757,10 +761,14 @@
 		var h = parseInt(sh) - parseInt(dh);
 
 		function scrolling() {
+			// Fixed header - disable dynamic positioning
+			// Keep the layout adjustments but remove header positioning changes
 			var mq = window.matchMedia("(min-width: 993px)");
 			var ms = window.matchMedia("(min-width: 768px)");
 			var mt = window.matchMedia("(max-width: 992px)");
 			
+			// Disable dynamic header sizing for fixed header
+			/*
 			if (mq.matches) {
 				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
 					shrinkOn = 55,
@@ -779,8 +787,19 @@
 					jQuery("body").addClass("side-layout");
 				}
 			}
+			*/
+			
+			// Keep side layout logic but disable sidebar positioning
+			if (mq.matches) {
+				if (jQuery("body").hasClass("side-content")) {
+					jQuery("body").addClass("side-layout");
+				}
+			}
+			
 			if (mq.matches) {
 				if (jQuery("header").hasClass("side-header")) {
+					// Disable side header positioning for fixed header
+					/*
 					if (jQuery(document).scrollTop() >= h) {
 						jQuery('#de-sidebar').css("position", "fixed");
 						if (parseInt(sh) > parseInt(dh)) {
@@ -800,6 +819,7 @@
 						jQuery('header .h-content').css("padding-left", "0px");
 						jQuery('#mainmenu li').css("width", "100%");
 					}
+					*/
 				}
 			}
 			if (mt.matches) {
@@ -1116,7 +1136,7 @@
 		 * --------------------------------------------------*/
 		jQuery(window).on("scroll", function() {
 			/* functions */
-			header_sticky();
+			// header_sticky(); // DISABLED for fixed header
 			de_counter();
 			de_progress();
 			init();

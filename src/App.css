@@ -16,11 +16,62 @@
 header {
   background-color: #873034 !important;
   transition: all 0.3s ease;
+  min-height: 120px; /* Consistent header height */
+  position: relative; /* Ensure proper positioning context */
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  min-height: 80px; /* Consistent container height */
+}
+
+header .header-border {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 80px; /* Consistent border height */
+}
+
+/* Logo styles */
+#logo {
+  display: flex;
+  align-items: center;
+  height: 70px; /* Set logo container height */
+}
+
+#logo img.logo {
+  max-height: 149px; /* Logo takes most of the header height */
+  width: auto;
+  height: auto;
+}
+
+#logo img.logo-2 {
+  max-height: 65px; /* Logo takes most of the header height */
+  width: auto;
+  height: auto;
+}
+
+/* Info section (top bar) */
+header .info {
+  background-color: rgba(135, 48, 52, 0.9);
+  padding: 10px 0;
+  min-height: 40px;
 }
 
 header.scrolled {
   background: rgba(135, 48, 52, 0.95) !important;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-height: 120px; /* Keep same height when scrolled to prevent dropdown positioning issues */
+}
+
+header.scrolled .container {
+  min-height: 80px; /* Maintain container height */
+}
+
+header.scrolled .header-border {
+  min-height: 80px; /* Maintain border height */
 }
 
 /* Ensure hero section is visible */
@@ -314,10 +365,85 @@ header.scrolled {
   justify-content: center;
 }
 
-/* Header scroll effects */
-header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Navigation menu styles */
+#mainmenu {
+  display: flex;
+  align-items: center;
+  height: 80px; /* Consistent menu height */
+  position: relative; /* Ensure proper positioning context for dropdowns */
+}
+
+#mainmenu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#mainmenu ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#mainmenu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#mainmenu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Dropdown menu styles */
+#mainmenu ul li ul {
+  position: absolute;
+  top: calc(100% - 1px); /* Adjusted positioning to account for any header size changes */
+  left: 0;
+  background-color: #873034;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001; /* Higher z-index to ensure it appears above everything */
+  flex-direction: column;
+  height: auto;
+  margin-top: 0; /* Remove any margin that might cause positioning issues */
+}
+
+#mainmenu ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#mainmenu ul li ul li {
+  width: 100%;
+  height: auto;
+}
+
+#mainmenu ul li ul li a {
+  padding: 12px 20px;
+  height: auto;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#mainmenu ul li ul li:last-child a {
+  border-bottom: none;
 }
 
 /* Menu toggle styles */
@@ -325,13 +451,13 @@ header.scrolled {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px;
 }
 
 .menu-toggle span {
   width: 25px;
   height: 3px;
-  background: #fff;
+  background-color: white;
   margin: 3px 0;
   transition: 0.3s;
 }
@@ -397,7 +523,24 @@ header.scrolled {
     top: 100%;
     left: 0;
     right: 0;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #873034;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    height: auto;
+  }
+  
+  #mainmenu.menu-open ul {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  #mainmenu.menu-open ul li {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  #mainmenu.menu-open ul li a {
+    padding: 15px 20px;
+    height: auto;
   }
 }

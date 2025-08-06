@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ServiceIcons from '../components/ServiceIcons';
 
 const HomePage = () => {
   return (
@@ -120,7 +121,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🔥</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.FireAlarm />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Fire Alarm Systems</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 State-of-the-art fire detection and alarm systems designed to protect lives and property
@@ -135,7 +138,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🧯</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.FireFighting />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Fire Fighting Equipment</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 Professional fire suppression systems including sprinklers and fire hose reels
@@ -150,7 +155,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>💨</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.SmokeExtraction />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Smoke Extraction</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 Advanced smoke extraction and ventilation systems for emergency situations
@@ -165,7 +172,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🚪</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.EmergencyExit />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Emergency Exit Lights</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 Emergency lighting systems ensuring safe evacuation during power failures
@@ -180,7 +189,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>📋</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.DesignApprovals />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Design & Approvals</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 Fire protection system drawings and Civil Defence approvals for compliance
@@ -195,7 +206,9 @@ const HomePage = () => {
               transition: 'transform 0.3s ease',
               cursor: 'pointer'
             }}>
-              <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🔧</div>
+              <div style={{ marginBottom: '20px' }}>
+                <ServiceIcons.Maintenance />
+              </div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Maintenance Services</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
                 Annual maintenance contracts to keep your fire protection systems optimal
