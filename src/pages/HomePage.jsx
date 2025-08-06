@@ -283,8 +283,8 @@ const HomePage = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Ready to Secure Your Property?</h2>
-              <p>
+              <p style={{color:'#873034', fontWeight: 'bold', fontSize: '28px'}}>Ready to Secure Your Property?</p>
+              <p style={{color:'#873034', fontSize: '14px'}}>
                 Contact us today to discuss your fire protection and safety needs. 
                 Our Civil Defence approved team is ready to help secure your property with the best fire protection solutions.
               </p>

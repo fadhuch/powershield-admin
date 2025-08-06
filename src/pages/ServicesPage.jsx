@@ -135,7 +135,7 @@ const ServicesPage = () => {
               <h1>Our Services</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Services</li>
               </ul>
             </div>

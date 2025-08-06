@@ -12,7 +12,7 @@ const AboutPage = () => {
               <h1>About Us</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>About Us</li>
               </ul>
             </div>

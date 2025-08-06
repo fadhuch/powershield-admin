@@ -12,9 +12,9 @@ const SmokeExtractionPage = () => {
               <h1>Smoke Extraction System</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li><Link to="/services">Services</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Smoke Extraction System</li>
               </ul>
             </div>

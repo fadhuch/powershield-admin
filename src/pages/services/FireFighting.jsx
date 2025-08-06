@@ -12,9 +12,9 @@ const FireFightingPage = () => {
               <h1>Fire Fighting Works</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li><Link to="/services">Services</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Fire Fighting Works</li>
               </ul>
             </div>

@@ -53,7 +53,7 @@ const ContactPage = () => {
               <h1>Contact Us</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Contact</li>
               </ul>
             </div>
@@ -188,8 +188,7 @@ const ContactPage = () => {
                   <div className="text">
                     <h4>Address</h4>
                     <p>
-                      Power Shield Technical Service L L C - 2<br />
-                      Near to Al Mumtaz Contracting<br />
+                      Power Shield Technical Service LLC<br />
                       Al Raas, Umm Al Quwain<br />
                       United Arab Emirates
                     </p>
@@ -223,8 +222,8 @@ const ContactPage = () => {
                   <div className="text">
                     <h4>Business Hours</h4>
                     <p>
-                      Monday - Friday: 08:00 - 16:00<br />
-                      Saturday: 09:00 - 13:00<br />
+                      Monday - Friday: 8:00 AM - 6:30 PM<br />
+                      Saturday: 8:30 AM - 2:00 PM<br />
                       Sunday: Closed
                     </p>
                   </div>
@@ -272,8 +271,8 @@ const ContactPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
-              <h2>Ready to Secure Your Property?</h2>
-              <p>
+              <p style={{color:'#873034', fontWeight: 'bold', fontSize: '28px'}}>Ready to Secure Your Property?</p>
+              <p style={{color:'#873034', fontSize: '14px'}}>
                 Let's discuss your fire protection requirements and how we can help secure your 
                 property with our Civil Defence approved fire safety solutions.
               </p>

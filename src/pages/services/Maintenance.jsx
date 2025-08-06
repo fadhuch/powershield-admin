@@ -12,9 +12,9 @@ const MaintenancePage = () => {
               <h1>Annual Maintenance Contract</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li><Link to="/services">Services</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Annual Maintenance Contract</li>
               </ul>
             </div>

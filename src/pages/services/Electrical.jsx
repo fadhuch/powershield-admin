@@ -12,9 +12,9 @@ const ElectricalPage = () => {
               <h1>Electrical Works</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li><Link to="/services">Services</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Electrical Works</li>
               </ul>
             </div>

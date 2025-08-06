@@ -12,9 +12,9 @@ const DesignApprovalsPage = () => {
               <h1>Design Drawings & Approvals</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li><Link to="/services">Services</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Design Drawings & Approvals</li>
               </ul>
             </div>

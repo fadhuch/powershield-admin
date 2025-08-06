@@ -131,7 +131,7 @@ const ProjectsPage = () => {
               <h1>Our Projects</h1>
               <ul className="crumb">
                 <li><Link to="/">Home</Link></li>
-                <li className="sep">/</li>
+                <li className="sep"></li>
                 <li>Projects</li>
               </ul>
             </div>
