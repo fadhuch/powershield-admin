@@ -233,7 +233,7 @@ const HomePage = () => {
             <div className="col-md-4 wow fadeInUp" data-wow-delay=".2s">
               <div className="portfolio-item">
                 <div className="portfolio-image">
-                  <img src="/assets/images/portfolio/pf (1).jpg" alt="Project 1" />
+                  <img src="/assets/images/services/fire_alarm.jpg" alt="Project 1" style={{maxWidth: '100%', height: 'auto'}}/>
                   <div className="portfolio-overlay">
                     <div className="portfolio-content">
                       <h4>Commercial Fire Alarm System</h4>
@@ -248,7 +248,7 @@ const HomePage = () => {
             <div className="col-md-4 wow fadeInUp" data-wow-delay=".4s">
               <div className="portfolio-item">
                 <div className="portfolio-image">
-                  <img src="/assets/images/portfolio/pf (4).jpg" alt="Project 2" />
+                  <img src="/assets/images/services/sprinkler.jpg" alt="Project 2" style={{maxWidth: '100%', height: 'auto'}}/>
                   <div className="portfolio-overlay">
                     <div className="portfolio-content">
                       <h4>Sprinkler System Installation</h4>
@@ -263,11 +263,11 @@ const HomePage = () => {
             <div className="col-md-4 wow fadeInUp" data-wow-delay=".6s">
               <div className="portfolio-item">
                 <div className="portfolio-image">
-                  <img src="/assets/images/portfolio/pf (3).jpg" alt="Project 3" />
+                  <img src="/assets/images/services/smoke_extraction.png" alt="Project 3" style={{maxWidth: '100%', height: 'auto'}}/>
                   <div className="portfolio-overlay">
                     <div className="portfolio-content">
-                      <h4>Emergency Exit Lighting</h4>
-                      <p>Emergency Safety Systems</p>
+                      <h4>Smoke Extraction Systems</h4>
+                      <p>Smoke extraction and ventilation systems in Umm Al Quwain</p>
                       <Link to="/projects/3" className="btn-line">View Project</Link>
                     </div>
                   </div>

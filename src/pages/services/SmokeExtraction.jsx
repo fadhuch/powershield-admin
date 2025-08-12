@@ -29,7 +29,7 @@ const SmokeExtractionPage = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_1.jpg" 
+                  src="/assets/images/services/smoke_extraction.png" 
                   className="img-responsive mb40" 
                   alt="Smoke Extraction Systems"
                 />

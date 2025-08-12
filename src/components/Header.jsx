@@ -20,8 +20,8 @@ const Header = () => {
         { id: 'smoke-extraction', label: 'Smoke Extraction System', href: '/services/smoke-extraction' },
         { id: 'emergency-exit', label: 'Emergency Exit Light Systems', href: '/services/emergency-exit' },
         { id: 'design-approvals', label: 'Design Drawings & Approvals', href: '/services/design-approvals' },
-        { id: 'electrical', label: 'Electrical Works', href: '/services/electrical' },
-        { id: 'plumbing', label: 'Plumbing Works', href: '/services/plumbing' },
+        // { id: 'electrical', label: 'Electrical Works', href: '/services/electrical' },
+        // { id: 'plumbing', label: 'Plumbing Works', href: '/services/plumbing' },
         { id: 'maintenance', label: 'Annual Maintenance Contract', href: '/services/maintenance' },
       ],
     },
@@ -29,21 +29,21 @@ const Header = () => {
       id: 'projects',
       label: 'Projects',
       href: '/projects',
-      children: [
-        { id: 'projects-fullwidth', label: 'Projects Fullwidth', href: '/projects' },
-        { id: 'projects-grid', label: 'Projects Grid', href: '/projects/grid' },
-        { id: 'gallery', label: 'Gallery', href: '/gallery' },
-      ],
+      // children: [
+      //   { id: 'projects-fullwidth', label: 'Projects Fullwidth', href: '/projects' },
+      //   { id: 'projects-grid', label: 'Projects Grid', href: '/projects/grid' },
+      //   { id: 'gallery', label: 'Gallery', href: '/gallery' },
+      // ],
     },
     {
       id: 'about',
       label: 'About Us',
       href: '/about',
-      children: [
-        { id: 'company', label: 'Company', href: '/about' },
-        { id: 'history', label: 'History', href: '/about/history' },
-        { id: 'team', label: 'Team', href: '/about/team' },
-      ],
+      // children: [
+      //   { id: 'company', label: 'Company', href: '/about' },
+      //   { id: 'history', label: 'History', href: '/about/history' },
+      //   { id: 'team', label: 'Team', href: '/about/team' },
+      // ],
     },
     {
       id: 'careers',
@@ -102,7 +102,7 @@ const Header = () => {
                   }}
                 >
                   <div style={{fontSize: '24px'}}>POWER SHIELD</div>
-                  <div style={{fontSize: '14px'}}>TECHNICAL SERVICES LLC</div>
+                  <div style={{fontSize: '14px'}}>TECHNICAL SERVICE</div>
                 </div>
               </div>
 

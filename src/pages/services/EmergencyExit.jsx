@@ -29,7 +29,7 @@ const EmergencyExitPage = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_3.jpg" 
+                  src="/assets/images/services/emergency_exit2.jpg" 
                   className="img-responsive mb40" 
                   alt="Emergency Exit Light Systems"
                 />

@@ -28,7 +28,7 @@ const UmmAlQuwainPage = () => {
             <div className="col-md-8">
               <h2>Leading Fire and Safety Company in Umm Al Quwain, UAE</h2>
               <p className="lead">
-                Power Shield Technical Services LLC is the premier fire and safety company serving 
+                Power Shield Technical Service LLC is the premier fire and safety company serving 
                 Umm Al Quwain and the surrounding areas. We provide comprehensive fire protection 
                 and safety solutions for residential, commercial, and industrial properties 
                 throughout Umm Al Quwain Emirate.
@@ -109,7 +109,7 @@ const UmmAlQuwainPage = () => {
               <div className="call-to-action-box" style={{ padding: '30px', background: '#f8f9fa', marginTop: '40px' }}>
                 <h4 style={{ color: '#873034' }}>Need Fire and Safety Services in Umm Al Quwain?</h4>
                 <p>
-                  Contact Power Shield Technical Services LLC today for professional fire protection 
+                  Contact Power Shield Technical Service LLC today for professional fire protection 
                   and safety solutions in Umm Al Quwain. Our certified team is ready to help 
                   secure your property with the best fire safety systems.
                 </p>

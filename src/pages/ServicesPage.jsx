@@ -9,7 +9,7 @@ const ServicesPage = () => {
       title: 'Fire Alarm Systems',
       description: 'State-of-the-art fire detection and alarm systems designed to protect lives and property with comprehensive smoke, heat, and fire detection capabilities.',
       iconComponent: ServiceIcons.FireAlarm,
-      image: '/assets/images/services/pic_1.jpg',
+      image: '/assets/images/services/fire_alarm.jpg',
       features: [
         'Smoke Detection Systems',
         'Heat Detection Systems',
@@ -24,7 +24,7 @@ const ServicesPage = () => {
       title: 'Fire Fighting Equipment',
       description: 'Professional fire suppression systems including sprinklers and fire hose reels for complete fire protection and rapid response.',
       iconComponent: ServiceIcons.FireFighting,
-      image: '/assets/images/services/pic_2.jpg',
+      image: '/assets/images/services/fire_fighting.avif',
       features: [
         'Fire Sprinkler Systems',
         'Fire Hose Reels',
@@ -39,7 +39,7 @@ const ServicesPage = () => {
       title: 'Smoke Extraction',
       description: 'Advanced smoke extraction and ventilation systems for emergency situations, removing harmful combustion gases during fire events.',
       iconComponent: ServiceIcons.SmokeExtraction,
-      image: '/assets/images/services/pic_3.jpg',
+      image: '/assets/images/services/smoke_extraction.png',
       features: [
         'Natural Smoke Ventilation',
         'Mechanical Smoke Extraction',
@@ -54,7 +54,7 @@ const ServicesPage = () => {
       title: 'Emergency Exit Lights',
       description: 'Emergency lighting systems ensuring safe evacuation during power failures with clear visibility and guidance pathways.',
       iconComponent: ServiceIcons.EmergencyExit,
-      image: '/assets/images/services/pic_4.jpg',
+      image: '/assets/images/services/emergency_exit.jpg',
       features: [
         'LED Emergency Exit Signs',
         'Emergency Lighting Systems',
@@ -69,7 +69,7 @@ const ServicesPage = () => {
       title: 'Design & Approvals',
       description: 'Fire protection system drawings and Civil Defence approvals for compliance with comprehensive design and documentation services.',
       iconComponent: ServiceIcons.DesignApprovals,
-      image: '/assets/images/services/pic_5.jpg',
+      image: '/assets/images/services/design.jpg',
       features: [
         'Fire Protection System Drawings',
         'Civil Defence Approvals',
@@ -84,7 +84,7 @@ const ServicesPage = () => {
       title: 'Maintenance Services',
       description: 'Annual maintenance contracts to keep your fire protection systems optimal with professional inspection and repair services.',
       iconComponent: ServiceIcons.Maintenance,
-      image: '/assets/images/services/pic_6.jpg',
+      image: '/assets/images/services/inspection-services.jpg',
       features: [
         'Preventive Maintenance',
         'Emergency Repair Services',

@@ -47,7 +47,7 @@ const AboutPage = () => {
             </div>
             <div className="col-md-6 wow fadeInRight">
               <img 
-                src="/assets/images/shop/1.jpg" 
+                src="/assets/images/services/about_us1.jpg" 
                 className="img-responsive" 
                 alt="Our Story" 
               />
@@ -59,7 +59,7 @@ const AboutPage = () => {
           <div className="row">
             <div className="col-md-6 wow fadeInLeft">
               <img 
-                src="/assets/images/shop/2.jpg" 
+                src="/assets/images/services/maintenance.webp" 
                 className="img-responsive" 
                 alt="Our Mission" 
               />

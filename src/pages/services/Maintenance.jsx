@@ -29,7 +29,7 @@ const MaintenancePage = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_6.jpg" 
+                  src="/assets/images/services/inspection-services.jpg" 
                   className="img-responsive mb40" 
                   alt="Annual Maintenance Contract"
                 />

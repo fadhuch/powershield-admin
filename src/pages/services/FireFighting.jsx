@@ -29,7 +29,7 @@ const FireFightingPage = () => {
             <div className="col-md-8">
               <div className="service-detail">
                 <img 
-                  src="/assets/images/services/pic_5.jpg" 
+                  src="/assets/images/services/suppression.jpg" 
                   className="img-responsive mb40" 
                   alt="Fire Fighting Systems"
                 />
