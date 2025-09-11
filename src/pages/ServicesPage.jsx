@@ -54,7 +54,7 @@ const ServicesPage = () => {
       title: 'Emergency Exit Lights',
       description: 'Emergency lighting systems ensuring safe evacuation during power failures with clear visibility and guidance pathways.',
       iconComponent: ServiceIcons.EmergencyExit,
-      image: '/assets/images/services/emergency_exit.jpg',
+      image: '/assets/images/services/exitLight.jpg',
       features: [
         'LED Emergency Exit Signs',
         'Emergency Lighting Systems',
@@ -69,7 +69,7 @@ const ServicesPage = () => {
       title: 'Design & Approvals',
       description: 'Fire protection system drawings and Civil Defence approvals for compliance with comprehensive design and documentation services.',
       iconComponent: ServiceIcons.DesignApprovals,
-      image: '/assets/images/services/design.jpg',
+      image: '/assets/images/services/designandapproval.jpg',
       features: [
         'Fire Protection System Drawings',
         'Civil Defence Approvals',

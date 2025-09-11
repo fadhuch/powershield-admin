@@ -62,10 +62,10 @@ const Footer = () => {
               </p>
             </div>
             <div className="social-icons">
-              <a href="#"><i className="fa fa-facebook"></i></a>
-              <a href="#"><i className="fa fa-twitter"></i></a>
-              <a href="#"><i className="fa fa-linkedin"></i></a>
-              <a href="#"><i className="fa fa-instagram"></i></a>
+              {/* <a href="#"><i className="fa fa-facebook"></i></a> */}
+              {/* <a href="#"><i className="fa fa-twitter"></i></a> */}
+              <a href="https://www.linkedin.com/company/power-shield-technical-service-l-l-c/"><i className="fa fa-linkedin"></i></a>
+              {/* <a href="#"><i className="fa fa-instagram"></i></a> */}
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const Footer = () => {
             <div className="footer-bottom">
               <div className="row">
                 <div className="col-md-6">
-                  <p>&copy; 2024 Power Shield Technical Service LLC. All rights reserved.</p>
+                  <p>&copy; 2023 Power Shield Technical Service LLC. All rights reserved.</p>
                 </div>
                 <div className="col-md-6 text-right">
                   <ul className="footer-menu" style={{ listStyleType: 'none', paddingLeft: 0 }}>
