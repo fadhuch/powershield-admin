@@ -39,7 +39,7 @@ const ServicesPage = () => {
       title: 'Smoke Extraction',
       description: 'Advanced smoke extraction and ventilation systems for emergency situations, removing harmful combustion gases during fire events.',
       iconComponent: ServiceIcons.SmokeExtraction,
-      image: '/assets/images/services/smoke_extraction.png',
+      image: '/assets/images/services/Ventilation.jpg',
       features: [
         'Natural Smoke Ventilation',
         'Mechanical Smoke Extraction',

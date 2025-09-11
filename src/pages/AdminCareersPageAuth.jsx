@@ -4,9 +4,13 @@ import { buildApiUrl } from '../config/api';
 const AdminCareersPage = () => {
   const [jobs, setJobs] = useState([]);
   const [applications, setApplications] = useState([]);
+  const [constants, setConstants] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [activeTab, setActiveTab] = useState('jobs');
   const [showJobForm, setShowJobForm] = useState(false);
+  const [showConstantForm, setShowConstantForm] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
+  const [editingConstant, setEditingConstant] = useState(null);
   const [loading, setLoading] = useState(false);
   const [selectedApplication, setSelectedApplication] = useState(null);
   const [showLoginPopup, setShowLoginPopup] = useState(false);
@@ -25,9 +29,19 @@ const AdminCareersPage = () => {
     status: 'active'
   });
 
+  const [constantForm, setConstantForm] = useState({
+    key: '',
+    value: '',
+    type: 'string',
+    description: '',
+    category: 'general'
+  });
+
   useEffect(() => {
     fetchJobs();
     fetchApplications();
+    fetchConstants();
+    fetchCategories();
   }, []);
 
   // Authentication helpers
@@ -153,6 +167,48 @@ const AdminCareersPage = () => {
     }
   };
 
+  const fetchConstants = async () => {
+    try {
+      const response = await makeAuthenticatedRequest(buildApiUrl('/admin/constants'));
+      const data = await response.json();
+      
+      console.log('Admin constants response:', data);
+      
+      if (Array.isArray(data)) {
+        setConstants(data);
+      } else {
+        console.warn('Unexpected constants response format:', data);
+        setConstants([]);
+      }
+    } catch (error) {
+      if (error.message !== 'Authentication required') {
+        console.error('Error fetching constants:', error);
+        setConstants([]);
+      }
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response = await makeAuthenticatedRequest(buildApiUrl('/admin/constants/categories'));
+      const data = await response.json();
+      
+      console.log('Categories response:', data);
+      
+      if (Array.isArray(data)) {
+        setCategories(data);
+      } else {
+        console.warn('Unexpected categories response format:', data);
+        setCategories([]);
+      }
+    } catch (error) {
+      if (error.message !== 'Authentication required') {
+        console.error('Error fetching categories:', error);
+        setCategories([]);
+      }
+    }
+  };
+
   const handleJobFormChange = (e) => {
     const { name, value } = e.target;
     setJobForm(prev => ({ ...prev, [name]: value }));
@@ -171,6 +227,102 @@ const AdminCareersPage = () => {
   const removeRequirement = (index) => {
     const newRequirements = jobForm.requirements.filter((_, i) => i !== index);
     setJobForm(prev => ({ ...prev, requirements: newRequirements }));
+  };
+
+  const handleConstantFormChange = (e) => {
+    const { name, value } = e.target;
+    setConstantForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmitConstant = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const url = editingConstant ? buildApiUrl(`/admin/constants/${editingConstant.id}`) : buildApiUrl('/admin/constants');
+      const method = editingConstant ? 'PUT' : 'POST';
+
+      const response = await makeAuthenticatedRequest(url, {
+        method,
+        body: JSON.stringify(constantForm)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Constant saved:', result);
+        
+        setShowConstantForm(false);
+        setEditingConstant(null);
+        setConstantForm({
+          key: '',
+          value: '',
+          type: 'string',
+          description: '',
+          category: 'general'
+        });
+        
+        await fetchConstants();
+        await fetchCategories();
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.message || 'Failed to save constant'}`);
+      }
+    } catch (error) {
+      console.error('Error saving constant:', error);
+      alert('Error saving constant');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEditConstant = (constant) => {
+    setEditingConstant(constant);
+    setConstantForm({
+      key: constant.key,
+      value: constant.value,
+      type: constant.type,
+      description: constant.description || '',
+      category: constant.category || 'general'
+    });
+    setShowConstantForm(true);
+  };
+
+  const handleDeleteConstant = async (constantId) => {
+    if (window.confirm('Are you sure you want to delete this constant?')) {
+      try {
+        const response = await makeAuthenticatedRequest(buildApiUrl(`/admin/constants/${constantId}`), {
+          method: 'DELETE'
+        });
+
+        if (response.ok) {
+          await fetchConstants();
+        } else {
+          const errorData = await response.json();
+          alert(`Error: ${errorData.message || 'Failed to delete constant'}`);
+        }
+      } catch (error) {
+        console.error('Error deleting constant:', error);
+        alert('Error deleting constant');
+      }
+    }
+  };
+
+  const handleToggleConstantStatus = async (constantId) => {
+    try {
+      const response = await makeAuthenticatedRequest(buildApiUrl(`/admin/constants/${constantId}/status`), {
+        method: 'PATCH'
+      });
+
+      if (response.ok) {
+        await fetchConstants();
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.message || 'Failed to toggle constant status'}`);
+      }
+    } catch (error) {
+      console.error('Error toggling constant status:', error);
+      alert('Error toggling constant status');
+    }
   };
 
   const handleSubmitJob = async (e) => {
@@ -429,6 +581,32 @@ const AdminCareersPage = () => {
               Add New Job
             </button>
           )}
+          {activeTab === 'constants' && (
+            <button
+              onClick={() => {
+                setShowConstantForm(true);
+                setEditingConstant(null);
+                setConstantForm({
+                  key: '',
+                  value: '',
+                  type: 'string',
+                  description: '',
+                  category: 'general'
+                });
+              }}
+              style={{
+                background: '#873034',
+                color: 'white',
+                padding: '12px 24px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+            >
+              Add New Constant
+            </button>
+          )}
         </div>
 
         {/* Tab Navigation */}
@@ -456,11 +634,26 @@ const AdminCareersPage = () => {
               background: activeTab === 'applications' ? '#873034' : 'transparent',
               color: activeTab === 'applications' ? 'white' : '#666',
               borderRadius: '5px 5px 0 0',
+              marginRight: '10px',
               cursor: 'pointer',
               fontWeight: 'bold'
             }}
           >
             Applications ({applications.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('constants')}
+            style={{
+              padding: '12px 24px',
+              border: 'none',
+              background: activeTab === 'constants' ? '#873034' : 'transparent',
+              color: activeTab === 'constants' ? 'white' : '#666',
+              borderRadius: '5px 5px 0 0',
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}
+          >
+            Constants ({constants.length})
           </button>
         </div>
 
@@ -726,6 +919,206 @@ const AdminCareersPage = () => {
           </div>
         )}
 
+        {/* Constant Form Modal */}
+        {showConstantForm && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0,0,0,0.5)',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '20px'
+          }}>
+            <div style={{
+              background: 'white',
+              padding: '40px',
+              borderRadius: '10px',
+              width: '100%',
+              maxWidth: '600px',
+              maxHeight: '90vh',
+              overflow: 'auto'
+            }}>
+              <h2 style={{ color: '#873034', marginBottom: '30px' }}>
+                {editingConstant ? 'Edit Constant' : 'Add New Constant'}
+              </h2>
+
+              <form onSubmit={handleSubmitConstant}>
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+                    Key *
+                  </label>
+                  <input
+                    type="text"
+                    name="key"
+                    value={constantForm.key}
+                    onChange={handleConstantFormChange}
+                    placeholder="e.g., site_title, contact_email"
+                    style={{
+                      width: '100%',
+                      padding: '12px',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px'
+                    }}
+                    required
+                  />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '20px', marginBottom: '20px' }}>
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+                      Value *
+                    </label>
+                    {constantForm.type === 'json' ? (
+                      <textarea
+                        name="value"
+                        value={constantForm.value}
+                        onChange={handleConstantFormChange}
+                        placeholder="Enter valid JSON"
+                        rows="4"
+                        style={{
+                          width: '100%',
+                          padding: '12px',
+                          border: '1px solid #ddd',
+                          borderRadius: '5px',
+                          fontFamily: 'monospace'
+                        }}
+                        required
+                      />
+                    ) : (
+                      <input
+                        type={constantForm.type === 'number' ? 'number' : 'text'}
+                        name="value"
+                        value={constantForm.value}
+                        onChange={handleConstantFormChange}
+                        placeholder="Enter value"
+                        style={{
+                          width: '100%',
+                          padding: '12px',
+                          border: '1px solid #ddd',
+                          borderRadius: '5px'
+                        }}
+                        required
+                      />
+                    )}
+                  </div>
+
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+                      Type
+                    </label>
+                    <select
+                      name="type"
+                      value={constantForm.type}
+                      onChange={handleConstantFormChange}
+                      style={{
+                        width: '100%',
+                        padding: '12px',
+                        border: '1px solid #ddd',
+                        borderRadius: '5px'
+                      }}
+                    >
+                      <option value="string">String</option>
+                      <option value="number">Number</option>
+                      <option value="boolean">Boolean</option>
+                      <option value="json">JSON</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '20px' }}>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+                    Category
+                  </label>
+                  <input
+                    type="text"
+                    name="category"
+                    value={constantForm.category}
+                    onChange={handleConstantFormChange}
+                    placeholder="e.g., general, contact, social"
+                    list="categories"
+                    style={{
+                      width: '100%',
+                      padding: '12px',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px'
+                    }}
+                  />
+                  <datalist id="categories">
+                    {categories.map(category => (
+                      <option key={category} value={category} />
+                    ))}
+                  </datalist>
+                </div>
+
+                <div style={{ marginBottom: '30px' }}>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+                    Description
+                  </label>
+                  <textarea
+                    name="description"
+                    value={constantForm.description}
+                    onChange={handleConstantFormChange}
+                    placeholder="Optional description for this constant"
+                    rows="3"
+                    style={{
+                      width: '100%',
+                      padding: '12px',
+                      border: '1px solid #ddd',
+                      borderRadius: '5px'
+                    }}
+                  />
+                </div>
+
+                <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowConstantForm(false);
+                      setEditingConstant(null);
+                      setConstantForm({
+                        key: '',
+                        value: '',
+                        type: 'string',
+                        description: '',
+                        category: 'general'
+                      });
+                    }}
+                    style={{
+                      padding: '12px 24px',
+                      background: '#6c757d',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    style={{
+                      padding: '12px 24px',
+                      background: loading ? '#6c757d' : '#873034',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: loading ? 'not-allowed' : 'pointer'
+                    }}
+                  >
+                    {loading ? 'Saving...' : (editingConstant ? 'Update Constant' : 'Create Constant')}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
         {/* Jobs Tab */}
         {activeTab === 'jobs' && (
           <div>
@@ -944,6 +1337,172 @@ const AdminCareersPage = () => {
                             {selectedApplication === application.id ? 'Show Less' : 'Read More'}
                           </button>
                         )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Constants Tab */}
+        {activeTab === 'constants' && (
+          <div>
+            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h3 style={{ color: '#873034' }}>Site Constants</h3>
+              <button
+                onClick={() => setShowConstantForm(true)}
+                style={{
+                  padding: '12px 24px',
+                  background: '#873034',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  fontWeight: 'bold'
+                }}
+              >
+                Add New Constant
+              </button>
+            </div>
+
+            {constants.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '60px', color: '#666' }}>
+                <h3>No constants found</h3>
+                <p>Add your first constant to manage site content dynamically.</p>
+              </div>
+            ) : (
+              <div style={{ display: 'grid', gap: '20px' }}>
+                {constants.map((constant) => (
+                  <div
+                    key={constant.id}
+                    style={{
+                      background: 'white',
+                      padding: '20px',
+                      borderRadius: '10px',
+                      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+                      border: constant.isActive ? '1px solid #e3e3e3' : '1px solid #f0f0f0',
+                      opacity: constant.isActive ? 1 : 0.6
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '15px' }}>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                          <h4 style={{ 
+                            color: '#873034', 
+                            margin: 0, 
+                            fontFamily: 'monospace',
+                            background: '#f8f9fa',
+                            padding: '4px 8px',
+                            borderRadius: '4px',
+                            fontSize: '14px'
+                          }}>
+                            {constant.key}
+                          </h4>
+                          <span style={{
+                            background: constant.type === 'string' ? '#28a745' : 
+                                       constant.type === 'number' ? '#007bff' :
+                                       constant.type === 'boolean' ? '#ffc107' : '#6f42c1',
+                            color: 'white',
+                            padding: '2px 8px',
+                            borderRadius: '12px',
+                            fontSize: '12px',
+                            fontWeight: 'bold'
+                          }}>
+                            {constant.type}
+                          </span>
+                          <span style={{
+                            background: '#6c757d',
+                            color: 'white',
+                            padding: '2px 8px',
+                            borderRadius: '12px',
+                            fontSize: '12px'
+                          }}>
+                            {constant.category}
+                          </span>
+                        </div>
+                        
+                        <div style={{ marginBottom: '10px' }}>
+                          <strong>Value:</strong>
+                          <div style={{
+                            background: '#f8f9fa',
+                            padding: '8px 12px',
+                            borderRadius: '4px',
+                            marginTop: '4px',
+                            fontFamily: constant.type === 'json' ? 'monospace' : 'inherit',
+                            fontSize: constant.type === 'json' ? '13px' : '14px',
+                            maxHeight: '100px',
+                            overflow: 'auto',
+                            border: '1px solid #e9ecef'
+                          }}>
+                            {constant.type === 'json' ? 
+                              JSON.stringify(JSON.parse(constant.value), null, 2) : 
+                              constant.value.toString()
+                            }
+                          </div>
+                        </div>
+                        
+                        {constant.description && (
+                          <p style={{ color: '#666', fontSize: '14px', margin: '8px 0 0 0' }}>
+                            {constant.description}
+                          </p>
+                        )}
+                        
+                        <div style={{ fontSize: '12px', color: '#999', marginTop: '10px' }}>
+                          Created: {new Date(constant.createdAt).toLocaleDateString()}
+                          {constant.updatedAt && constant.updatedAt !== constant.createdAt && (
+                            <span> • Updated: {new Date(constant.updatedAt).toLocaleDateString()}</span>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <div style={{ display: 'flex', gap: '8px', marginLeft: '20px' }}>
+                        <button
+                          onClick={() => handleToggleConstantStatus(constant.id)}
+                          style={{
+                            padding: '6px 12px',
+                            background: constant.isActive ? '#28a745' : '#6c757d',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            fontSize: '12px'
+                          }}
+                          title={constant.isActive ? 'Deactivate' : 'Activate'}
+                        >
+                          {constant.isActive ? 'Active' : 'Inactive'}
+                        </button>
+                        
+                        <button
+                          onClick={() => handleEditConstant(constant)}
+                          style={{
+                            padding: '6px 12px',
+                            background: '#007bff',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            fontSize: '12px'
+                          }}
+                        >
+                          Edit
+                        </button>
+                        
+                        <button
+                          onClick={() => handleDeleteConstant(constant.id)}
+                          style={{
+                            padding: '6px 12px',
+                            background: '#dc3545',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            fontSize: '12px'
+                          }}
+                        >
+                          Delete
+                        </button>
                       </div>
                     </div>
                   </div>

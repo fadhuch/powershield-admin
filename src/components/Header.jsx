@@ -1,8 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+  const menuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Close menu and submenu when window resizes to desktop size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+        setOpenSubmenu(null);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleSubmenuToggle = (itemId) => {
+    setOpenSubmenu(openSubmenu === itemId ? null : itemId);
+  };
 
   const navigationItems = [
     {
@@ -25,16 +61,16 @@ const Header = () => {
         { id: 'maintenance', label: 'Annual Maintenance Contract', href: '/services/maintenance' },
       ],
     },
-    {
-      id: 'projects',
-      label: 'Projects',
-      href: '/projects',
-      // children: [
-      //   { id: 'projects-fullwidth', label: 'Projects Fullwidth', href: '/projects' },
-      //   { id: 'projects-grid', label: 'Projects Grid', href: '/projects/grid' },
-      //   { id: 'gallery', label: 'Gallery', href: '/gallery' },
-      // ],
-    },
+    // {
+    //   id: 'projects',
+    //   label: 'Projects',
+    //   href: '/projects',
+    //   // children: [
+    //   //   { id: 'projects-fullwidth', label: 'Projects Fullwidth', href: '/projects' },
+    //   //   { id: 'projects-grid', label: 'Projects Grid', href: '/projects/grid' },
+    //   //   { id: 'gallery', label: 'Gallery', href: '/gallery' },
+    //   // ],
+    // },
     {
       id: 'about',
       label: 'About Us',
@@ -58,25 +94,63 @@ const Header = () => {
   ];
 
   const renderNavItem = (item) => (
-    <li key={item.id}>
-      <Link to={item.href}>{item.label}</Link>
-      {item.children && (
-        <ul>
-          {item.children.map(child => (
-            <li key={child.id}>
-              <Link to={child.href}>{child.label}</Link>
-            </li>
-          ))}
-        </ul>
+    <li key={item.id} className={item.children ? 'has-submenu' : ''}>
+      {item.children ? (
+        <>
+          <div className="nav-item-with-submenu">
+            <Link 
+              to={item.href}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+            <button 
+              className={`submenu-toggle ${openSubmenu === item.id ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleSubmenuToggle(item.id);
+              }}
+              aria-label={`Toggle ${item.label} submenu`}
+            >
+              <span></span>
+            </button>
+          </div>
+          <ul className={`submenu ${openSubmenu === item.id ? 'open' : ''}`}>
+            {item.children.map(child => (
+              <li key={child.id}>
+                <Link 
+                  to={child.href}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {child.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <Link 
+          to={item.href}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {item.label}
+        </Link>
       )}
     </li>
   );
 
   return (
-    <header>
-      <div className="container" style={{ minHeight: '100%' }}>
+    <>
+      {/* Mobile menu overlay */}
+      <div 
+        className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+      
+      <header ref={menuRef}>
+        <div className="container" style={{ minHeight: '100%' }}>
         <div className="row" style={{ minWidth: '100%' }}>
-          <div className="col-md-12">
+          <div className="" style={{ marginBottom: '0px !important' }}>
             <div className="header-border">
               <div id="logo" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <Link to="/">
@@ -116,7 +190,7 @@ const Header = () => {
               </nav>
 
               <div
-                className="menu-toggle"
+                className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <span></span>
@@ -128,6 +202,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 

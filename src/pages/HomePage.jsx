@@ -219,7 +219,7 @@ const HomePage = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="section-portfolio">
+      <section id="section-portfolio" style={{display: ' none'}}>
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-md-offset-3 text-center wow fadeInUp">

@@ -23,24 +23,25 @@ const FireAlarmPage = () => {
       </section>
 
       {/* Main Content */}
-      <div id="content">
+      <section>
         <div className="container">
           <div className="row">
-            <div className="col-md-9">
-              {/* Service Overview */}
-              <div className="row">
-                <div className="col-md-12">
-                  <h2>Fire Alarm Systems</h2>
-                  <p className="lead">
-                    Professional fire alarm system installation, maintenance, and monitoring services 
-                    to protect your property and ensure compliance with UAE fire safety regulations.
-                  </p>
-                </div>
-              </div>
+            <div className="col-md-8">
+              <div className="service-detail">
+                <img 
+                  src="/assets/images/services/fire_alarm.jpg" 
+                  className="img-responsive mb40" 
+                  alt="Fire Alarm Systems"
+                />
 
-              {/* Service Description */}
-              <div className="row">
-                <div className="col-md-12">
+                <h2>Professional Fire Alarm Works</h2>
+                <p className="lead">
+                  Professional fire alarm system installation, maintenance, and monitoring services to protect your property and ensure compliance with UAE fire safety regulations.
+
+
+                </p>
+
+                <div className="col-md-12" style={{paddingLeft: '0px'}}>
                   <h3>Our Fire Alarm Services</h3>
                   <p>
                     At Power Shield Technical Service LLC, we specialize in comprehensive fire alarm 
@@ -51,21 +52,21 @@ const FireAlarmPage = () => {
 
                   <h4>Key Features of Our Fire Alarm Systems:</h4>
                   <ul className="ul-style-2">
-                    <li><strong>Conventional Fire Alarm Systems:</strong> Cost-effective solutions for smaller buildings</li>
+                    <li><strong>Conventional Fire Alarm Systems:</strong> Cost-effective solutions for smaller buildings and facilities</li>
                     <li><strong>Addressable Fire Alarm Systems:</strong> Advanced systems with precise location identification</li>
-                    <li><strong>Wireless Fire Alarm Systems:</strong> Flexible installation options</li>
-                    <li><strong>Integration Capabilities:</strong> Seamless integration with other building systems</li>
-                    <li><strong>Remote Monitoring:</strong> 24/7 monitoring and alert systems</li>
-                    <li><strong>Voice Evacuation Systems:</strong> Clear audio instructions during emergencies</li>
+                    <li><strong>Wireless Fire Alarm Systems:</strong> Flexible installation options for heritage or complex buildings</li>
+                    <li><strong>Integration Capabilities:</strong> Seamless integration with HVAC, lighting, and security systems</li>
+                    <li><strong>Remote Monitoring:</strong> 24/7 monitoring and alert systems for enhanced safety</li>
+                    <li><strong>Voice Evacuation Systems:</strong> Clear audio instructions during emergency situations</li>
                   </ul>
 
-                  <h4>Detection Technologies We Install:</h4>
+                  <h4 style={{marginTop: '40px'}}>Detection Technologies We Install:</h4>
                   <div className="row">
                     <div className="col-md-6">
                       <ul className="ul-style-2">
-                        <li>Smoke Detectors</li>
-                        <li>Heat Detectors</li>
-                        <li>Flame Detectors</li>
+                        <li>Smoke Detectors (Photoelectric & Ionization)</li>
+                        <li>Heat Detectors (Fixed & Rate-of-Rise)</li>
+                        <li>Flame Detectors (UV & IR)</li>
                         <li>Multi-Sensor Detectors</li>
                       </ul>
                     </div>
@@ -73,59 +74,131 @@ const FireAlarmPage = () => {
                       <ul className="ul-style-2">
                         <li>Gas Detectors</li>
                         <li>Beam Detectors</li>
-                        <li>Aspirating Smoke Detection</li>
+                        <li>Aspirating Smoke Detection (ASD)</li>
                         <li>Manual Call Points</li>
                       </ul>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* CTA Section */}
-              <div className="row mt-4">
+                  
+                </div>
+
+                <div className="spacer-single"></div>
+
+
+              {/* Why Choose Us */}
+              <div className="row mt-4" style={{marginTop: '40px'}}>
                 <div className="col-md-12">
-                  <div className="call-to-action bg-color text-center">
-                    <h3>Need a Fire Alarm System Quote?</h3>
-                    <p>Contact our experts today for a comprehensive assessment.</p>
-                    <Link to="/contact" className="btn-main">Get Free Quote</Link>
+                  <h3>Why Choose Power Shield for Fire Alarm Systems?</h3>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="feature-box">
+                        <i className="icon-shield"></i>
+                        <div className="text">
+                          <h4>Certified Professionals</h4>
+                          <p>Our technicians are certified and regularly trained on the latest fire alarm technologies and UAE regulations.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="feature-box">
+                        <i className="icon-tools"></i>
+                        <div className="text">
+                          <h4>Quality Equipment</h4>
+                          <p>We use only premium fire alarm equipment from leading international manufacturers with proven reliability.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="feature-box">
+                        <i className="icon-phone"></i>
+                        <div className="text">
+                          <h4>24/7 Support</h4>
+                          <p>Our emergency response team is available round-the-clock for urgent fire alarm system issues.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6">
+                      <div className="feature-box">
+                        <i className="icon-documents"></i>
+                        <div className="text">
+                          <h4>Compliance Assurance</h4>
+                          <p>We ensure full compliance with UAE Civil Defense requirements and assist with all approval processes.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div id="sidebar" className="col-md-3">
-              <div className="widget">
-                <h4>Our Services</h4>
-                <ul className="ul-style-1">
-                  <li><Link to="/services/fire-alarm" className="active">Fire Alarm Works</Link></li>
-                  <li><Link to="/services/fire-fighting">Fire Fighting Works</Link></li>
-                  <li><Link to="/services/smoke-extraction">Smoke Extraction System</Link></li>
-                  <li><Link to="/services/emergency-exit">Emergency Exit Light Systems</Link></li>
-                  <li><Link to="/services/design-approvals">Design Drawings & Approvals</Link></li>
-                  <li><Link to="/services/electrical">Electrical Works</Link></li>
-                  <li><Link to="/services/plumbing">Plumbing Works</Link></li>
-                  <li><Link to="/services/maintenance">Annual Maintenance Contract</Link></li>
-                </ul>
-              </div>
+            <div className="col-md-4">
+              <div className="sidebar">
+                <div className="widget">
+                  <h3>Our Services</h3>
+                  <ul className="service-list">
+                    <li><Link to="/services/fire-alarm">Fire Alarm Works</Link></li>
+                    <li><Link to="/services/fire-fighting">Fire Fighting Works</Link></li>
+                    <li><Link to="/services/smoke-extraction">Smoke Extraction System</Link></li>
+                    <li><Link to="/services/emergency-exit" className="active">Emergency Exit Lights</Link></li>
+                    <li><Link to="/services/design-approvals">Design & Approvals</Link></li>
+                    <li><Link to="/services/electrical">Electrical Works</Link></li>
+                    <li><Link to="/services/plumbing">Plumbing Works</Link></li>
+                    <li><Link to="/services/maintenance">Maintenance Contract</Link></li>
+                  </ul>
+                </div>
 
-              <div className="widget">
-                <h4>Emergency Contact</h4>
-                <div className="widget-contact">
-                  <div className="contact-info">
-                    <i className="icon-phone"></i>
-                    <span>+971 6 579 9806</span>
+                <div className="widget">
+                  <h3>Contact Information</h3>
+                  <div className="contact-widget">
+                    <p>
+                      <i className="fa fa-map-marker"></i>
+                      Al Raas, Umm Al Quwain<br />
+                      United Arab Emirates
+                    </p>
+                    <p>
+                      <i className="fa fa-phone"></i>
+                      +971 6 579 9806
+                    </p>
+                    <p>
+                      <i className="fa fa-envelope"></i>
+                      powershieldtechnicalservice@gmail.com
+                    </p>
                   </div>
-                  <div className="contact-info">
-                    <i className="icon-envelope"></i>
-                    <span>powershieldtechnicalservice@gmail.com</span>
-                  </div>
+                </div>
+
+                <div className="widget">
+                  <h3>Get A Quote</h3>
+                  <p>Need a fire alarm system quote? Contact us for professional consultation and installation.</p>
+                  <Link to="/contact" className="btn btn-primary">
+                    Request Quote
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="call-to-action text-light" data-stellar-background-ratio=".2">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 wow fadeInLeft" data-wow-delay=".2s">
+              <h2>Need a Fire Alarm System Quote?</h2>
+              <p>
+                Contact our experts today for a comprehensive fire alarm system assessment and customized solution for your property.
+              </p>
+            </div>
+            <div className="col-md-4 text-right wow fadeInRight" data-wow-delay=".4s">
+              <Link to="/contact" className="btn-line">
+                Get Started
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

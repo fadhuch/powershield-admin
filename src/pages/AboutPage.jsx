@@ -47,7 +47,7 @@ const AboutPage = () => {
             </div>
             <div className="col-md-6 wow fadeInRight">
               <img 
-                src="/assets/images/services/about_us1.jpg" 
+                src="/assets/images/services/about1.jpg" 
                 className="img-responsive" 
                 alt="Our Story" 
               />
@@ -139,7 +139,7 @@ const AboutPage = () => {
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".2s">
               <div className="feature-box-small-icon">
                 <div className="icon">
-                  <i className="id-color fa fa-trophy"></i>
+                  <i className="id-color fa fa-trophy" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Quality Excellence</h4>
@@ -152,9 +152,9 @@ const AboutPage = () => {
             </div>
 
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".4s">
-              <div className="feature-box-small-icon">
+              <div className="feature-box-small-icon" >
                 <div className="icon">
-                  <i className="id-color fa fa-users"></i>
+                  <i className="id-color fa fa-users" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Expert Team</h4>
@@ -169,7 +169,7 @@ const AboutPage = () => {
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".6s">
               <div className="feature-box-small-icon">
                 <div className="icon">
-                  <i className="id-color fa fa-clock-o"></i>
+                  <i className="id-color fa fa-clock-o" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Timely Delivery</h4>
@@ -184,7 +184,7 @@ const AboutPage = () => {
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay=".8s">
               <div className="feature-box-small-icon">
                 <div className="icon">
-                  <i className="id-color fa fa-lightbulb-o"></i>
+                  <i className="id-color fa fa-lightbulb-o" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Innovation</h4>
@@ -199,7 +199,7 @@ const AboutPage = () => {
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay="1s">
               <div className="feature-box-small-icon">
                 <div className="icon">
-                  <i className="id-color fa fa-dollar"></i>
+                  <i className="id-color fa fa-dollar" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Cost Effective</h4>
@@ -214,7 +214,7 @@ const AboutPage = () => {
             <div className="col-md-4 mb30 wow fadeInUp" data-wow-delay="1.2s">
               <div className="feature-box-small-icon">
                 <div className="icon">
-                  <i className="id-color fa fa-shield"></i>
+                  <i className="id-color fa fa-shield" style={{top: '14px'}}></i>
                 </div>
                 <div className="text">
                   <h4>Safety First</h4>
