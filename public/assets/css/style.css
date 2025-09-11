@@ -1917,7 +1917,7 @@ margin:5px 0 5px 0;
 	border:solid 1px;
 	}
 	
-	..feature-box-small-icon {
+	.feature-box-small-icon {
 	margin-bottom: 30px;
 	}
 	
@@ -5532,7 +5532,7 @@ text-align: center;
 margin: 0 6px;
 display: inline-block;
 zoom: 1;
-*display: inline;
+display: inline;
 }
 
 .testi-slider .flex-control-paging li a {

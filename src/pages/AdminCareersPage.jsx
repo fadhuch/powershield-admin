@@ -550,6 +550,20 @@ const AdminCareersPage = () => {
           >
             Grouped by Job ({Object.keys(groupedApplications).length})
           </button>
+          <button
+            onClick={() => setActiveTab('Constants')}
+            style={{
+              padding: '12px 24px',
+              border: 'none',
+              background: activeTab === 'Constants' ? '#873034' : 'transparent',
+              color: activeTab === 'Constants' ? 'white' : '#666',
+              borderRadius: '5px 5px 0 0',
+              cursor: 'pointer',
+              fontWeight: 'bold'
+            }}
+          >
+            Constants
+          </button>
         </div>
 
         {/* Job Form Modal */}
@@ -1230,6 +1244,20 @@ const AdminCareersPage = () => {
             )}
           </div>
         )}
+
+        {/* Constants Tab */
+          <div
+            style={{
+              display: activeTab === 'constants' ? 'block' : 'none',
+              padding: '20px',
+              border: '1px solid #ddd',
+              borderTop: 'none'
+            }}
+          >
+            <h3>Constants</h3>
+            
+          </div>
+        }
       </div>
     </>
   );
