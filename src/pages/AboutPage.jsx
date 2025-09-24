@@ -1,7 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { buildApiUrl } from '../config/api';
 
 const AboutPage = () => {
+  const [constants, setConstants] = useState({
+    projectCount: '80',
+    clientsCount: '50',
+    yearsExperience: 10,
+    expertEngineers: '15'
+  });
+  const [constantsLoaded, setConstantsLoaded] = useState(false);
+
+  useEffect(() => {
+    fetchConstants();
+  }, []);
+
+  const fetchConstants = async () => {
+    try {
+      setConstantsLoaded(false);
+      const response = await fetch(buildApiUrl('/constants'));
+      const data = await response.json();
+      if (data) {
+        setConstants(prevConstants => ({
+          ...prevConstants,
+          ...data
+        }));
+        setConstantsLoaded(true);
+      }
+    } catch (error) {
+      console.error('Error fetching constants:', error);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -91,36 +121,39 @@ const AboutPage = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="text-light">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".0s">
-              <div className="de_count">
-                <h3 className="timer" data-to="150" data-speed="2500">0</h3>
-                <span>Projects Completed</span>
+      {constantsLoaded && (
+        <section className="" style={{ background: '#ebc569', padding: '40px 0' }}>
+          <div className="container">
+            
+            <div className="row">
+              <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".0s">
+                <div className="de_count">
+                  <h3 className="timer" data-to={Number(constants.projectCount) || 80} data-speed="2500">0</h3>
+                  <span>Projects Completed</span>
+                </div>
               </div>
-            </div>
-            <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".2s">
-              <div className="de_count">
-                <h3 className="timer" data-to="80" data-speed="2500">0</h3>
-                <span>Happy Clients</span>
+              <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".2s">
+                <div className="de_count">
+                  <h3 className="timer" data-to={Number(constants.clientsCount) || 50} data-speed="2500">0</h3>
+                  <span>Happy Clients</span>
+                </div>
               </div>
-            </div>
-            <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".4s">
-              <div className="de_count">
-                <h3 className="timer" data-to="25" data-speed="2500">0</h3>
-                <span>Expert Engineers</span>
+              <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".4s">
+                <div className="de_count">
+                  <h3 className="timer" data-to={Number(constants.expertEngineers) || 15} data-speed="2500">0</h3>
+                  <span>Expert Engineers</span>
+                </div>
               </div>
-            </div>
-            <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".6s">
-              <div className="de_count">
-                <h3 className="timer" data-to="10" data-speed="2500">0</h3>
-                <span>Years Experience</span>
+              <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".6s">
+                <div className="de_count">
+                  <h3 className="timer" data-to={Number(constants.yearsExperience) || 10} data-speed="2500">0</h3>
+                  <span>Years Experience</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Why Choose Us */}
       <section>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import constantsService from '../services/constantsService';
 
 // Hook to fetch and use site constants
-export const useConstants = (category = null) => {
+export const useConstants = () => {
   const [constants, setConstants] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ export const useConstants = (category = null) => {
       try {
         setLoading(true);
         setError(null);
-        const constantsData = await constantsService.getConstantsMap(category);
+        const constantsData = await constantsService.getConstants();
         setConstants(constantsData);
       } catch (err) {
         setError(err.message);
@@ -23,7 +23,7 @@ export const useConstants = (category = null) => {
     };
 
     fetchConstants();
-  }, [category]);
+  }, []);
 
   // Helper function to get a constant value with a fallback
   const getConstant = (key, fallback = '') => {
@@ -54,34 +54,9 @@ export const useConstant = (key, fallback = '') => {
       try {
         setLoading(true);
         setError(null);
-        const constant = await constantsService.getConstantByKey(key);
+        const constantValue = await constantsService.getConstantByKey(key);
         
-        if (constant && constant.value !== undefined) {
-          // Parse value based on type
-          let parsedValue = constant.value;
-          switch (constant.type) {
-            case 'number':
-              parsedValue = Number(constant.value);
-              break;
-            case 'boolean':
-              parsedValue = Boolean(constant.value);
-              break;
-            case 'json':
-              try {
-                parsedValue = JSON.parse(constant.value);
-              } catch (e) {
-                console.warn(`Failed to parse JSON for constant ${key}:`, e);
-                parsedValue = constant.value;
-              }
-              break;
-            default:
-              parsedValue = constant.value;
-              break;
-          }
-          setValue(parsedValue);
-        } else {
-          setValue(fallback);
-        }
+        setValue(constantValue !== null ? constantValue : fallback);
       } catch (err) {
         setError(err.message);
         setValue(fallback);

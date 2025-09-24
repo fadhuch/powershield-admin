@@ -25,6 +25,7 @@ const AdminCareersPage = () => {
   const [jobs, setJobs] = useState([]);
   const [applications, setApplications] = useState([]);
   const [groupedApplications, setGroupedApplications] = useState({});
+  const [constants, setConstants] = useState({});
   const [activeTab, setActiveTab] = useState('jobs');
   const [showJobForm, setShowJobForm] = useState(false);
   const [editingJob, setEditingJob] = useState(null);
@@ -50,6 +51,7 @@ const AdminCareersPage = () => {
     fetchJobs();
     fetchApplications();
     fetchGroupedApplications();
+    fetchConstants();
   }, []);
 
   // Authentication helpers
@@ -114,6 +116,7 @@ const AdminCareersPage = () => {
           fetchJobs();
           fetchApplications();
           fetchGroupedApplications();
+          fetchConstants();
         } else {
           setLoginError('Authentication token not found in response.');
         }
@@ -173,6 +176,25 @@ const AdminCareersPage = () => {
       if (error.message !== 'Authentication required') {
         console.error('Error fetching applications:', error);
         setApplications([]);
+      }
+    }
+  };
+
+  const fetchConstants = async () => {
+    try {
+      const response = await makeAuthenticatedRequest(buildApiUrl('/constants'));
+      const data = await response.json();
+      console.log('Constants response:', data);
+      if (data) {
+        setConstants(data);
+      } else {
+        console.warn('Unexpected constants response format:', data);
+        setConstants([]);
+      }
+    } catch (error) {
+      if (error.message !== 'Authentication required') {
+        console.error('Error fetching constants:', error);
+        setConstants([]);
       }
     }
   };
@@ -358,6 +380,55 @@ const AdminCareersPage = () => {
     if (token) {
       const url = buildApiUrl(`/admin/job-applications/${application.id}/resume`);
       window.open(`${url}?token=${encodeURIComponent(token)}`, '_blank');
+    }
+  };
+
+  const handleConstantChange = (key, value) => {
+    // Parse the value if it looks like JSON
+    let parsedValue = value;
+    try {
+      // Try to parse as JSON if it starts with { or [
+      if ((value.trim().startsWith('{') && value.trim().endsWith('}')) || 
+          (value.trim().startsWith('[') && value.trim().endsWith(']'))) {
+        parsedValue = JSON.parse(value);
+      }
+    } catch (error) {
+      // If parsing fails, keep it as string
+      parsedValue = value;
+    }
+    
+    setConstants(prev => ({
+      ...prev,
+      [key]: parsedValue
+    }));
+  };
+
+  const updateConstants = async () => {
+    setLoading(true);
+    try {
+      const response = await makeAuthenticatedRequest(buildApiUrl('/constants'), {
+        method: 'PUT',
+        body: JSON.stringify(constants)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Constants updated successfully:', data);
+        alert('Constants updated successfully!');
+        // Refresh constants from server to ensure consistency
+        await fetchConstants();
+      } else {
+        const errorData = await response.json();
+        console.error('Error updating constants:', errorData);
+        alert('Error updating constants: ' + (errorData.message || 'Unknown error'));
+      }
+    } catch (error) {
+      console.error('Error updating constants:', error);
+      if (error.message !== 'Authentication required') {
+        alert('Error updating constants: ' + error.message);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -1248,14 +1319,115 @@ const AdminCareersPage = () => {
         {/* Constants Tab */
           <div
             style={{
-              display: activeTab === 'constants' ? 'block' : 'none',
+              display: activeTab === 'Constants' ? 'block' : 'none',
               padding: '20px',
               border: '1px solid #ddd',
               borderTop: 'none'
             }}
           >
-            <h3>Constants</h3>
-            
+            {Object.keys(constants).length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '60px', color: '#666' }}>
+                <h4>No constants found</h4>
+                <p>Constants will appear here once they are created in the system.</p>
+              </div>
+            ) : (
+              <div>
+                {/* Constants Header with Update Button */}
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'center', 
+                  marginBottom: '20px',
+                  paddingBottom: '15px',
+                  borderBottom: '2px solid #eee'
+                }}>
+                  <h3 style={{ color: '#873034', margin: 0 }}>
+                    Application Constants ({Object.keys(constants).length})
+                  </h3>
+                  <button
+                    onClick={updateConstants}
+                    disabled={loading}
+                    style={{
+                      background: loading ? '#6c757d' : '#28a745',
+                      color: 'white',
+                      padding: '12px 24px',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: loading ? 'not-allowed' : 'pointer',
+                      fontWeight: 'bold',
+                      fontSize: '16px'
+                    }}
+                  >
+                    {loading ? 'Updating...' : 'Update Constants'}
+                  </button>
+                </div>
+
+                <div style={{ display: 'grid', gap: '15px' }}>
+                  {Object.entries(constants).map(([key, value]) => (
+                    <div key={key} style={{
+                      background: '#f8f9fa',
+                      padding: '15px',
+                      borderRadius: '5px',
+                      border: '1px solid #eee'
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{ width: '100%' }}>
+                          <div style={{ 
+                            fontFamily: 'monospace',
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            color: '#007bff',
+                            marginBottom: '8px'
+                          }}>
+                            {key}
+                          </div>
+                          <input
+                            type="text"
+                            value={typeof value === 'object' ? JSON.stringify(value) : value}
+                            onChange={(e) => handleConstantChange(key, e.target.value)}
+                            style={{
+                              width: '100%',
+                              padding: '8px',
+                              border: '1px solid #ddd',
+                              borderRadius: '3px',
+                              fontFamily: typeof value === 'object' ? 'monospace' : 'inherit'
+                            }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Bottom Update Button */}
+                <div style={{ 
+                  textAlign: 'center', 
+                  marginTop: '30px',
+                  paddingTop: '20px',
+                  borderTop: '1px solid #eee'
+                }}>
+                  <button
+                    onClick={updateConstants}
+                    disabled={loading}
+                    style={{
+                      background: loading ? '#6c757d' : '#873034',
+                      color: 'white',
+                      padding: '15px 40px',
+                      border: 'none',
+                      borderRadius: '5px',
+                      cursor: loading ? 'not-allowed' : 'pointer',
+                      fontWeight: 'bold',
+                      fontSize: '16px'
+                    }}
+                  >
+                    {loading ? 'Updating Constants...' : 'Save All Changes'}
+                  </button>
+                  <p style={{ color: '#666', fontSize: '14px', marginTop: '10px' }}>
+                    Click to save all constant changes to the server
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         }
       </div>

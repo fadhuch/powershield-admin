@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ServiceIcons from '../components/ServiceIcons';
+import { buildApiUrl } from '../config/api';
 
 const HomePage = () => {
+  const [constants, setConstants] = useState({
+    projectCount: '80',
+    clientsCount: '50',
+    companyName: 'Power Shield Technical Service LLC',
+    contactEmail: 'info@powershield.ae',
+    yearsExperience: 10,
+    officeLocation: 'Umm Al Quwain, UAE'
+  });
+  const [constantsLoaded, setConstantsLoaded] = useState(false);
+
+  useEffect(() => {
+    fetchConstants();
+  }, []);
+
+  const fetchConstants = async () => {
+    try {
+      setConstantsLoaded(false);
+      const response = await fetch(buildApiUrl('/constants'));
+      const data = await response.json();
+      if (data) {
+        setConstants(prevConstants => ({
+          ...prevConstants,
+          ...data
+        }));
+        setConstantsLoaded(true);
+      }
+    } catch (error) {
+      console.error('Error fetching constants:', error);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -72,21 +104,23 @@ const HomePage = () => {
                 installations. Our team of experts ensures quality and excellence in every 
                 project we undertake, with full Civil Defence approval and compliance.
               </p>
-
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="de_count">
-                    <h3 className="timer" data-to="100" data-speed="2500">0</h3>
-                    <span>Projects Completed</span>
+              {
+                constantsLoaded &&
+                  <div className="row">
+                    <div className="col-md-6">
+                      <div className="de_count">
+                        <h3 className="timer" data-to={Number(constants.projectCount) || 22} data-speed="2500">0</h3>
+                      <span>Projects Completed</span>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="de_count">
+                      <h3 className="timer" data-to={Number(constants.clientsCount) || 5} data-speed="2500">0</h3>
+                      <span>Happy Clients</span>
+                    </div>
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="de_count">
-                    <h3 className="timer" data-to="50" data-speed="2500">0</h3>
-                    <span>Happy Clients</span>
-                  </div>
-                </div>
-              </div>
+              }
 
               <Link to="/about" className="btn-line">
                 Learn More

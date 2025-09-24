@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import JobApplicationPage from './pages/JobApplicationPage';
 import AdminCareersPage from './pages/AdminCareersPage';
+import ConstantsTest from './pages/ConstantsTest';
 import UmmAlQuwainPage from './pages/UmmAlQuwainPage';
 
 // Import individual service pages
@@ -51,6 +52,7 @@ function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/apply/:jobId" element={<JobApplicationPage />} />
           <Route path="/admin/careers" element={<AdminCareersPage />} />
+          <Route path="/admin/constants-test" element={<ConstantsTest />} />
           <Route path="/shop" element={<div style={{padding: '20px'}}>Shop Page - Coming Soon</div>} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<div style={{padding: '20px'}}>404 - Page Not Found</div>} />
