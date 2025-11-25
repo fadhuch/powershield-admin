@@ -61,16 +61,12 @@ const Header = () => {
         { id: 'maintenance', label: 'Annual Maintenance Contract', href: '/services/maintenance' },
       ],
     },
-    // {
-    //   id: 'projects',
-    //   label: 'Projects',
-    //   href: '/projects',
-    //   // children: [
-    //   //   { id: 'projects-fullwidth', label: 'Projects Fullwidth', href: '/projects' },
-    //   //   { id: 'projects-grid', label: 'Projects Grid', href: '/projects/grid' },
-    //   //   { id: 'gallery', label: 'Gallery', href: '/gallery' },
-    //   // ],
-    // },
+    {
+      id: 'projects',
+      label: 'Projects',
+      href: '/projects',
+    
+    },
     {
       id: 'about',
       label: 'About Us',

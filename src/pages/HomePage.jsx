@@ -18,9 +18,31 @@ const HomePage = () => {
     fetchConstants();
   }, []);
 
+  // Reinitialize counter animation when constants are loaded
+  useEffect(() => {
+    if (constantsLoaded && window.jQuery) {
+      // Wait a bit for DOM to update
+      setTimeout(() => {
+        // Reinitialize the counter animation
+        if (window.jQuery('.timer').length && typeof window.jQuery('.timer').countTo === 'function') {
+          window.jQuery('.timer').each(function() {
+            const $this = window.jQuery(this);
+            const countTo = parseInt($this.attr('data-to'));
+            $this.text('0');
+            $this.countTo({
+              from: 0,
+              to: countTo,
+              speed: 2500,
+              refreshInterval: 50
+            });
+          });
+        }
+      }, 100);
+    }
+  }, [constantsLoaded, constants.projectCount, constants.clientsCount]);
+
   const fetchConstants = async () => {
     try {
-      setConstantsLoaded(false);
       const response = await fetch(buildApiUrl('/constants'));
       const data = await response.json();
       if (data) {
@@ -32,6 +54,7 @@ const HomePage = () => {
       }
     } catch (error) {
       console.error('Error fetching constants:', error);
+      setConstantsLoaded(true); // Set to true even on error to show default values
     }
   };
 
@@ -104,23 +127,34 @@ const HomePage = () => {
                 installations. Our team of experts ensures quality and excellence in every 
                 project we undertake, with full Civil Defence approval and compliance.
               </p>
-              {
-                constantsLoaded &&
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="de_count">
-                        <h3 className="timer" data-to={Number(constants.projectCount) || 22} data-speed="2500">0</h3>
+              {constantsLoaded && (
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="de_count">
+                      <h3 
+                        className="timer" 
+                        data-to={parseInt(String(constants.projectCount).replace(/[^0-9]/g, '')) || 80} 
+                        data-speed="2500"
+                      >
+                        0
+                      </h3>
                       <span>Projects Completed</span>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="de_count">
-                      <h3 className="timer" data-to={Number(constants.clientsCount) || 5} data-speed="2500">0</h3>
+                      <h3 
+                        className="timer" 
+                        data-to={parseInt(String(constants.clientsCount).replace(/[^0-9]/g, '')) || 50} 
+                        data-speed="2500"
+                      >
+                        0
+                      </h3>
                       <span>Happy Clients</span>
                     </div>
                   </div>
                 </div>
-              }
+              )}
 
               <Link to="/about" className="btn-line">
                 Learn More

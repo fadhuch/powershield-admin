@@ -15,9 +15,31 @@ const AboutPage = () => {
     fetchConstants();
   }, []);
 
+  // Reinitialize counter animation when constants are loaded
+  useEffect(() => {
+    if (constantsLoaded && window.jQuery) {
+      // Wait a bit for DOM to update
+      setTimeout(() => {
+        // Reinitialize the counter animation
+        if (window.jQuery('.timer').length && typeof window.jQuery('.timer').countTo === 'function') {
+          window.jQuery('.timer').each(function() {
+            const $this = window.jQuery(this);
+            const countTo = parseInt($this.attr('data-to'));
+            $this.text('0');
+            $this.countTo({
+              from: 0,
+              to: countTo,
+              speed: 2500,
+              refreshInterval: 50
+            });
+          });
+        }
+      }, 100);
+    }
+  }, [constantsLoaded, constants]);
+
   const fetchConstants = async () => {
     try {
-      setConstantsLoaded(false);
       const response = await fetch(buildApiUrl('/constants'));
       const data = await response.json();
       if (data) {
@@ -29,6 +51,7 @@ const AboutPage = () => {
       }
     } catch (error) {
       console.error('Error fetching constants:', error);
+      setConstantsLoaded(true); // Set to true even on error to show default values
     }
   };
 
@@ -128,25 +151,49 @@ const AboutPage = () => {
             <div className="row">
               <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".0s">
                 <div className="de_count">
-                  <h3 className="timer" data-to={Number(constants.projectCount) || 80} data-speed="2500">0</h3>
+                  <h3 
+                    className="timer" 
+                    data-to={parseInt(String(constants.projectCount).replace(/[^0-9]/g, '')) || 80} 
+                    data-speed="2500"
+                  >
+                    0
+                  </h3>
                   <span>Projects Completed</span>
                 </div>
               </div>
               <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".2s">
                 <div className="de_count">
-                  <h3 className="timer" data-to={Number(constants.clientsCount) || 50} data-speed="2500">0</h3>
+                  <h3 
+                    className="timer" 
+                    data-to={parseInt(String(constants.clientsCount).replace(/[^0-9]/g, '')) || 50} 
+                    data-speed="2500"
+                  >
+                    0
+                  </h3>
                   <span>Happy Clients</span>
                 </div>
               </div>
               <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".4s">
                 <div className="de_count">
-                  <h3 className="timer" data-to={Number(constants.expertEngineers) || 15} data-speed="2500">0</h3>
+                  <h3 
+                    className="timer" 
+                    data-to={parseInt(String(constants.expertEngineers).replace(/[^0-9]/g, '')) || 15} 
+                    data-speed="2500"
+                  >
+                    0
+                  </h3>
                   <span>Expert Engineers</span>
                 </div>
               </div>
               <div className="col-md-3 text-center wow fadeInUp" data-wow-delay=".6s">
                 <div className="de_count">
-                  <h3 className="timer" data-to={Number(constants.yearsExperience) || 10} data-speed="2500">0</h3>
+                  <h3 
+                    className="timer" 
+                    data-to={parseInt(String(constants.yearsExperience).replace(/[^0-9]/g, '')) || 10} 
+                    data-speed="2500"
+                  >
+                    0
+                  </h3>
                   <span>Years Experience</span>
                 </div>
               </div>
