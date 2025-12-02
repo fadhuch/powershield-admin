@@ -22,7 +22,7 @@ This document outlines the SEO optimization strategy implemented for Power Shiel
 ### 1. Meta Tags Optimization
 **Title Tag:**
 - Old: "Power Shield Technical Service LLC - Fire Safety & Engineering Solutions | UAE"
-- New: "Fire and Safety Company in Umm Al Quwain | Power Shield Technical Service LLC | UAE"
+- New: "Power Shield Technical Service LLC | Fire and Safety Company in Umm Al Quwain | UAE"
 
 **Meta Description:**
 - Updated to include "Umm Al Quwain fire and safety" naturally

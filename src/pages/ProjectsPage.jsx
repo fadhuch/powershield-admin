@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import projectsData from '../../projects.json';
 
 const ProjectsPage = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('completed');
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -35,13 +35,11 @@ const ProjectsPage = () => {
   }, []);
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'fire-safety', label: 'Fire & Safety' },
+    { id: 'completed', label: 'Completed Projects' },
+    { id: 'ongoing', label: 'Ongoing Projects' },
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects = projects.filter(project => project.status.toLowerCase() === activeFilter);
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -103,9 +101,9 @@ const ProjectsPage = () => {
           padding: '20px',
           textAlign: 'center'
         }}>
-          <div style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>
+          {/* <div style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>
             {project.reference}
-          </div>
+          </div> */}
           <div style={{ fontSize: '14px', opacity: 0.9, marginBottom: '5px' }}>
             {project.title}
           </div>
@@ -224,7 +222,7 @@ const ProjectsPage = () => {
                     }}>
                       <div className="project-overlay-content">
                         <div style={{ color: 'white', textAlign: 'center', padding: '20px' }}>
-                          <h5 style={{ color: 'white', marginBottom: '10px' }}>{project.reference}</h5>
+                          {/* <h5 style={{ color: 'white', marginBottom: '10px' }}>{project.reference}</h5> */}
                           <p style={{ fontSize: '12px', margin: 0 }}>{project.title}</p>
                         </div>
                       </div>
@@ -237,9 +235,9 @@ const ProjectsPage = () => {
                     flexDirection: 'column' 
                   }}>
                     <div className="project-category" style={{ marginBottom: '15px' }}>
-                      <span className="badge badge-primary" style={{ fontSize: '11px', padding: '5px 10px' }}>
+                      {/* <span className="badge badge-primary" style={{ fontSize: '11px', padding: '5px 10px' }}>
                         {project.reference}
-                      </span>
+                      </span> */}
                       <span className={`badge badge-${getStatusColor(project.status)} float-right`} style={{ padding: '5px 10px' }}>
                         {project.status}
                       </span>
