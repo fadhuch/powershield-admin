@@ -144,6 +144,7 @@ const AboutPage = () => {
       </section>
 
       {/* Statistics Section */}
+      {/* 
       {constantsLoaded && (
         <section className="" style={{ background: '#ebc569', padding: '40px 0' }}>
           <div className="container">
@@ -201,8 +202,9 @@ const AboutPage = () => {
           </div>
         </section>
       )}
+       */}
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us 
       <section>
         <div className="container">
           <div className="row">
@@ -308,6 +310,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+       */}
     </>
   );
 };
