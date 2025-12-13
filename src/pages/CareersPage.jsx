@@ -212,8 +212,8 @@ const CareersPage = () => {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
-            <div style={{ textAlign: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', justifyContent: 'center' }}>
+            <div style={{ textAlign: 'center', flex: '0 0 calc(33.333% - 27px)', minWidth: '280px' }}>
               <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🏆</div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Industry Leader</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -221,7 +221,7 @@ const CareersPage = () => {
               </p>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', flex: '0 0 calc(33.333% - 27px)', minWidth: '280px' }}>
               <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>📈</div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Career Growth</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -229,7 +229,7 @@ const CareersPage = () => {
               </p>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', flex: '0 0 calc(33.333% - 27px)', minWidth: '280px' }}>
               <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>🤝</div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Team Culture</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
@@ -237,7 +237,7 @@ const CareersPage = () => {
               </p>
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', flex: '0 0 calc(33.333% - 27px)', minWidth: '280px' }}>
               <div style={{ fontSize: '3em', color: '#873034', marginBottom: '20px' }}>💰</div>
               <h3 style={{ color: '#873034', marginBottom: '15px' }}>Competitive Benefits</h3>
               <p style={{ color: '#666', lineHeight: '1.6' }}>
