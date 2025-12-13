@@ -65,7 +65,10 @@ const Header = () => {
       id: 'projects',
       label: 'Projects',
       href: '/projects',
-    
+      children: [
+        { id: 'all-projects', label: 'All Projects', href: '/projects' },
+        { id: 'contractors', label: 'Contractors & Consultants', href: '/contractors' },
+      ],
     },
     {
       id: 'about',

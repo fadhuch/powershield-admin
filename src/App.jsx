@@ -11,6 +11,7 @@ import JobApplicationPage from './pages/JobApplicationPage';
 import AdminCareersPage from './pages/AdminCareersPage';
 import ConstantsTest from './pages/ConstantsTest';
 import UmmAlQuwainPage from './pages/UmmAlQuwainPage';
+import ContractorsPage from './pages/ContractorsPage';
 
 // Import individual service pages
 import FireAlarmPage from './pages/services/FireAlarm';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectsPage />} />
           <Route path="/projects/grid" element={<ProjectsPage />} />
           <Route path="/gallery" element={<ProjectsPage />} />
+          <Route path="/contractors" element={<ContractorsPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/apply/:jobId" element={<JobApplicationPage />} />
           <Route path="/admin/careers" element={<AdminCareersPage />} />
