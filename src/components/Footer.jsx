@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="footer-logo">
               <Link to="/">
                 <img
-                  src="/assets/images/logo.png"
+                  src="/assets/images/logonobackground.png"
                   alt="Power Shield Technical Service LLC"
                   style={{ width: '150px' }}
                 />

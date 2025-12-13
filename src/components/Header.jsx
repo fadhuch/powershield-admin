@@ -152,7 +152,7 @@ const Header = () => {
                 <Link to="/">
                   <img
                     className="logo"
-                    src="/assets/images/logo.png"
+                    src="/assets/images/logonobackground.png"
                     alt="Power Shield Technical Service LLC"
                   />
                   <img
