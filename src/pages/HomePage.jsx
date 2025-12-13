@@ -130,16 +130,20 @@ const HomePage = () => {
               {constantsLoaded && (
                 <div className="row">
                   <div className="col-md-6">
-                    <div className="de_count">
-                      <h3 
-                        className="timer" 
-                        data-to={parseInt(String(constants.projectCount).replace(/[^0-9]/g, '')) || 80} 
-                        data-speed="2500"
-                      >
-                        0
-                      </h3>
-                      <span>Projects Completed</span>
-                    </div>
+                    <Link to="/projects" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                      <div className="de_count" style={{ transition: 'transform 0.3s ease' }} 
+                           onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                           onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                        <h3 
+                          className="timer" 
+                          data-to={parseInt(String(constants.projectCount).replace(/[^0-9]/g, '')) || 80} 
+                          data-speed="2500"
+                        >
+                          0
+                        </h3>
+                        <span>Projects Completed</span>
+                      </div>
+                    </Link>
                   </div>
                   <div className="col-md-6">
                     <div className="de_count">
