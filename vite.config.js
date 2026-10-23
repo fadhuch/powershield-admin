@@ -23,7 +23,7 @@ export default defineConfig({
   define: {
     'import.meta.env.VITE_API_URL': JSON.stringify(
       process.env.NODE_ENV === 'production' 
-        ? 'https://api.powershieldllc.com/api'
+        ? 'https://api.powershieldllc.ae/api'
         : 'http://localhost:5001/api'
     )
   }
