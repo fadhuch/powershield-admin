@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.powershieldllc.com/sitemap.xml
+Sitemap: https://www.powershieldllc.ae/sitemap.xml
 
 # Crawl-delay (optional, helps prevent overloading the server)
 Crawl-delay: 1

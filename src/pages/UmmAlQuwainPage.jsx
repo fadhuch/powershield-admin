@@ -136,7 +136,7 @@ const UmmAlQuwainPage = () => {
                   <h4>Emergency Contact</h4>
                   <p><strong>24/7 Emergency Service</strong></p>
                   <p>Phone: <a href="tel:+971-XX-XXXXXXX">+971-XX-XXXXXXX</a></p>
-                  <p>Email: <a href="mailto:info@powershieldllc.com">info@powershieldllc.com</a></p>
+                  <p>Email: <a href="mailto:info@powershieldllc.ae">info@powershieldllc.ae</a></p>
                 </div>
 
                 <div className="widget">
